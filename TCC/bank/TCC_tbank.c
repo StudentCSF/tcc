@@ -12,13 +12,17 @@ typedef struct {
     TCC_bank_Transaction* transactions;
     TCC_loan_interest_Rate* rates;
     TCC_card_Credit* credits;
-     TCC_tbank_auth_Context auth_ctx;
-}  TCC_tbank_Cache;
+    TCC_tbank_auth_Context auth_ctx;
+} TCC_tbank_Cache;
 
-static  TCC_tbank_Cache t_cache = {0};
+static TCC_tbank_Cache* get_tbank_cache() {
+    static TCC_tbank_Cache t_cache = {0};
+    return &t_cache;
+}
 
-static void TCC_demo_data_Init(const  TCC_tbank_auth_Context* auth) {
-    memcpy(&t_cache.auth_ctx, auth, sizeof( TCC_tbank_auth_Context));
+static void TCC_demo_data_Init(const TCC_tbank_auth_Context* auth) {
+    TCC_tbank_Cache* cache = get_tbank_cache();
+    memcpy(&cache->auth_ctx, auth, sizeof(TCC_tbank_auth_Context));
 
     static TCC_bank_Transaction tbank_transactions[] = {
         {.date = 1672531200, .amount = 75000.0, .currency = "RUB", .type = "salary", .status = "completed"},
@@ -36,22 +40,23 @@ static void TCC_demo_data_Init(const  TCC_tbank_auth_Context* auth) {
         {.date = 1675209600, .amount = 150.5, .source = "cashback", .description = "Quarterly cashback"}
     };
 
-    t_cache.transactions = malloc(sizeof(tbank_transactions));
-    memcpy(t_cache.transactions, tbank_transactions, sizeof(tbank_transactions));
+    cache->transactions = malloc(sizeof(tbank_transactions));
+    memcpy(cache->transactions, tbank_transactions, sizeof(tbank_transactions));
 
-    t_cache.rates = malloc(sizeof(tbank_rates));
-    memcpy(t_cache.rates, tbank_rates, sizeof(tbank_rates));
+    cache->rates = malloc(sizeof(tbank_rates));
+    memcpy(cache->rates, tbank_rates, sizeof(tbank_rates));
 
-    t_cache.credits = malloc(sizeof(tbank_credits));
-    memcpy(t_cache.credits, tbank_credits, sizeof(tbank_credits));
+    cache->credits = malloc(sizeof(tbank_credits));
+    memcpy(cache->credits, tbank_credits, sizeof(tbank_credits));
 }
 
 static TCC_bank_api_Status TCC_tbank_GetTransactions(const char* employee_id, TCC_bank_Transaction** transactions, size_t* count) {
+    TCC_tbank_Cache* cache = get_tbank_cache();
     if(strncmp(employee_id, "tbank_", 6) != 0) {
         return TCC_bank_api_error_auth;
     }
 
-    *transactions = t_cache.transactions;
+    *transactions = cache->transactions;
     *count = 3;
     return TCC_bank_api_ok;
 }
@@ -70,21 +75,23 @@ static TCC_bank_api_Status TCC_tbank_GetInn(const char* employee_id, char* inn, 
 }
 
 static TCC_bank_api_Status TCC_tbank_GetInterestRates(const char* employee_id, TCC_loan_interest_Rate** rates, size_t* count) {
+    TCC_tbank_Cache* cache = get_tbank_cache();
     if(strncmp(employee_id, "tbank_", 6) != 0) {
         return TCC_bank_api_error_auth;
     }
 
-    *rates = t_cache.rates;
+    *rates = cache->rates;
     *count = 2;
     return TCC_bank_api_ok;
 }
 
 static TCC_bank_api_Status TCC_tbank_GetCardCredits(const char* employee_id, TCC_card_Credit** credits, size_t* count) {
+    TCC_tbank_Cache* cache = get_tbank_cache();
     if(strncmp(employee_id, "tbank_", 6) != 0) {
         return TCC_bank_api_error_auth;
     }
 
-    *credits = t_cache.credits;
+    *credits = cache->credits;
     *count = 2;
     return TCC_bank_api_ok;
 }
@@ -96,7 +103,7 @@ static const TCC_bank_Api tbank_api = {
     .get_card_credits = TCC_tbank_GetCardCredits
 };
 
-const TCC_bank_Api* TCC_tbank_InitApi(const  TCC_tbank_auth_Context* auth) {
+const TCC_bank_Api* TCC_tbank_InitApi(const TCC_tbank_auth_Context* auth) {
     if(strncmp(auth->digital_signature, "TBS-", 4) != 0) {
         return NULL;
     }
@@ -106,8 +113,9 @@ const TCC_bank_Api* TCC_tbank_InitApi(const  TCC_tbank_auth_Context* auth) {
 }
 
 void TCC_tbank_CleanupApi() {
-    free(t_cache.transactions);
-    free(t_cache.rates);
-    free(t_cache.credits);
-    memset(&t_cache, 0, sizeof(t_cache));
+    TCC_tbank_Cache* cache = get_tbank_cache();
+    free(cache->transactions);
+    free(cache->rates);
+    free(cache->credits);
+    memset(cache, 0, sizeof(*cache));
 }

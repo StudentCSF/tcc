@@ -11,11 +11,16 @@ typedef struct {
     TCC_bank_Transaction* transactions;
     TCC_loan_interest_Rate* rates;
     TCC_card_Credit* credits;
-}  TCC_sber_Cache;
+} TCC_sber_Cache;
 
-static  TCC_sber_Cache s_cache = {0};
+static TCC_sber_Cache* get_sber_cache() {
+    static TCC_sber_Cache s_cache = {0};
+    return &s_cache;
+}
 
 static void TCC_demo_data_Init() {
+    TCC_sber_Cache* cache = get_sber_cache();
+    
     static TCC_bank_Transaction sber_transactions[] = {
         {.date = 1672531200, .amount = 150000.0, .currency = "RUB", .type = "salary", .status = "completed"},
         {.date = 1675209600, .amount = 5000.0, .currency = "USD", .type = "bonus", .status = "completed"},
@@ -32,22 +37,23 @@ static void TCC_demo_data_Init() {
         {.date = 1675209600, .amount = 5000.0, .source = "bonus", .description = "Q4 Performance Bonus"}
     };
 
-    s_cache.transactions = malloc(sizeof(sber_transactions));
-    memcpy(s_cache.transactions, sber_transactions, sizeof(sber_transactions));
+    cache->transactions = malloc(sizeof(sber_transactions));
+    memcpy(cache->transactions, sber_transactions, sizeof(sber_transactions));
 
-    s_cache.rates = malloc(sizeof(sber_rates));
-    memcpy(s_cache.rates, sber_rates, sizeof(sber_rates));
+    cache->rates = malloc(sizeof(sber_rates));
+    memcpy(cache->rates, sber_rates, sizeof(sber_rates));
 
-    s_cache.credits = malloc(sizeof(sber_credits));
-    memcpy(s_cache.credits, sber_credits, sizeof(sber_credits));
+    cache->credits = malloc(sizeof(sber_credits));
+    memcpy(cache->credits, sber_credits, sizeof(sber_credits));
 }
 
 static TCC_bank_api_Status TCC_sber_GetTransactions(const char* employee_id, TCC_bank_Transaction** transactions, size_t* count) {
+    TCC_sber_Cache* cache = get_sber_cache();
     if(strncmp(employee_id, "sber_", 5) != 0) {
         return TCC_bank_api_error_auth;
     }
 
-    *transactions = s_cache.transactions;
+    *transactions = cache->transactions;
     *count = 3;
     return TCC_bank_api_ok;
 }
@@ -66,21 +72,23 @@ static TCC_bank_api_Status TCC_sber_GetInn(const char* employee_id, char* inn, s
 }
 
 static TCC_bank_api_Status TCC_sber_GetInterestRates(const char* employee_id, TCC_loan_interest_Rate** rates, size_t* count) {
+    TCC_sber_Cache* cache = get_sber_cache();
     if(strncmp(employee_id, "sber_", 5) != 0) {
         return TCC_bank_api_error_auth;
     }
 
-    *rates = s_cache.rates;
+    *rates = cache->rates;
     *count = 2;
     return TCC_bank_api_ok;
 }
 
 static TCC_bank_api_Status TCC_sber_GetCardCredits(const char* employee_id, TCC_card_Credit** credits, size_t* count) {
+    TCC_sber_Cache* cache = get_sber_cache();
     if(strncmp(employee_id, "sber_", 5) != 0) {
         return TCC_bank_api_error_auth;
     }
 
-    *credits = s_cache.credits;
+    *credits = cache->credits;
     *count = 2;
     return TCC_bank_api_ok;
 }
@@ -98,8 +106,9 @@ const TCC_bank_Api* TCC_sber_InitApi() {
 }
 
 void TCC_sber_CleanupApi() {
-    free(s_cache.transactions);
-    free(s_cache.rates);
-    free(s_cache.credits);
-    memset(&s_cache, 0, sizeof(s_cache));
+    TCC_sber_Cache* cache = get_sber_cache();
+    free(cache->transactions);
+    free(cache->rates);
+    free(cache->credits);
+    memset(cache, 0, sizeof(*cache));
 }

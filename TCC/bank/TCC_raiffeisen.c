@@ -12,14 +12,18 @@ typedef struct {
     TCC_bank_Transaction* transactions;
     TCC_loan_interest_Rate* rates;
     TCC_card_Credit* credits;
-     TCC_raiffeisen_employee_Info employee_info;
+    TCC_raiffeisen_employee_Info employee_info;
     char auth_token[64];
 } TCC_raiffeisen_Cache;
 
-static TCC_raiffeisen_Cache r_cache = {0};
+static TCC_raiffeisen_Cache* get_r_cache() {
+    static TCC_raiffeisen_Cache r_cache = {0};
+    return &r_cache;
+}
 
 static void TCC_demo_data_Init(const char* auth_token) {
-    strncpy(r_cache.auth_token, auth_token, sizeof(r_cache.auth_token)-1);
+    TCC_raiffeisen_Cache* cache = get_r_cache();
+    strncpy(cache->auth_token, auth_token, sizeof(cache->auth_token)-1);
     
     static TCC_bank_Transaction raif_transactions[] = {
         {.date = 1672531200, .amount = 120000.0, .currency = "RUB", .type = "salary", .status = "completed"},
@@ -37,27 +41,28 @@ static void TCC_demo_data_Init(const char* auth_token) {
         {.date = 1675209600, .amount = 2500.0, .source = "bonus", .description = "Annual performance bonus"}
     };
 
-    r_cache.employee_info = ( TCC_raiffeisen_employee_Info){
+    cache->employee_info = (TCC_raiffeisen_employee_Info){
         .branch_code = "RAIF-MOS-001",
         .contract_date = 1640995200
     };
 
-    r_cache.transactions = malloc(sizeof(raif_transactions));
-    memcpy(r_cache.transactions, raif_transactions, sizeof(raif_transactions));
+    cache->transactions = malloc(sizeof(raif_transactions));
+    memcpy(cache->transactions, raif_transactions, sizeof(raif_transactions));
 
-    r_cache.rates = malloc(sizeof(raif_rates));
-    memcpy(r_cache.rates, raif_rates, sizeof(raif_rates));
+    cache->rates = malloc(sizeof(raif_rates));
+    memcpy(cache->rates, raif_rates, sizeof(raif_rates));
 
-    r_cache.credits = malloc(sizeof(raif_credits));
-    memcpy(r_cache.credits, raif_credits, sizeof(raif_credits));
+    cache->credits = malloc(sizeof(raif_credits));
+    memcpy(cache->credits, raif_credits, sizeof(raif_credits));
 }
 
 static TCC_bank_api_Status TCC_raif_GetTransactions(const char* employee_id, TCC_bank_Transaction** transactions, size_t* count) {
+    TCC_raiffeisen_Cache* cache = get_r_cache();
     if(strncmp(employee_id, "raif_", 5) != 0) {
         return TCC_bank_api_error_auth;
     }
 
-    *transactions = r_cache.transactions;
+    *transactions = cache->transactions;
     *count = 3;
     return TCC_bank_api_ok;
 }
@@ -76,31 +81,34 @@ static TCC_bank_api_Status TCC_raif_GetInn(const char* employee_id, char* inn, s
 }
 
 static TCC_bank_api_Status TCC_raif_GetInterestRates(const char* employee_id, TCC_loan_interest_Rate** rates, size_t* count) {
+    TCC_raiffeisen_Cache* cache = get_r_cache();
     if(strncmp(employee_id, "raif_", 5) != 0) {
         return TCC_bank_api_error_auth;
     }
 
-    *rates = r_cache.rates;
+    *rates = cache->rates;
     *count = 2;
     return TCC_bank_api_ok;
 }
 
 static TCC_bank_api_Status TCC_raif_GetCardCredits(const char* employee_id, TCC_card_Credit** credits, size_t* count) {
+    TCC_raiffeisen_Cache* cache = get_r_cache();
     if(strncmp(employee_id, "raif_", 5) != 0) {
         return TCC_bank_api_error_auth;
     }
 
-    *credits = r_cache.credits;
+    *credits = cache->credits;
     *count = 2;
     return TCC_bank_api_ok;
 }
 
-static TCC_bank_api_Status TCC_raif_GetEmployeeInfo(const char* employee_id,  TCC_raiffeisen_employee_Info* info) {
+static TCC_bank_api_Status TCC_raif_GetEmployeeInfo(const char* employee_id, TCC_raiffeisen_employee_Info* info) {
+    TCC_raiffeisen_Cache* cache = get_r_cache();
     if(strncmp(employee_id, "raif_", 5) != 0) {
         return TCC_bank_api_error_auth;
     }
 
-    *info = r_cache.employee_info;
+    *info = cache->employee_info;
     return TCC_bank_api_ok;
 }
 
@@ -121,12 +129,13 @@ const TCC_bank_Api* TCC_raiffeisen_InitApi(const char* auth_token) {
 }
 
 void TCC_raiffeisen_CleanupApi() {
-    free(r_cache.transactions);
-    free(r_cache.rates);
-    free(r_cache.credits);
-    memset(&r_cache, 0, sizeof(r_cache));
+    TCC_raiffeisen_Cache* cache = get_r_cache();
+    free(cache->transactions);
+    free(cache->rates);
+    free(cache->credits);
+    memset(cache, 0, sizeof(*cache));
 }
 
-TCC_bank_api_Status TCC_raiffeisen_GetEmployeeInfo(const char* employee_id,  TCC_raiffeisen_employee_Info* info) {
+TCC_bank_api_Status TCC_raiffeisen_GetEmployeeInfo(const char* employee_id, TCC_raiffeisen_employee_Info* info) {
     return TCC_raif_GetEmployeeInfo(employee_id, info);
 }
