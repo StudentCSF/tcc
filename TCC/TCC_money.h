@@ -1,12 +1,8 @@
-#pragma once
-#include <pthread.h>
-#include <stdlib.h>
-#include "TCC/TCC_money.h"
-#ifndef TCC_MONEY_H
-#define TCC_MONEY_H
+#ifndef TCC__MONEY_H
+#define TCC__MONEY_H
 
-#include "TCC_error.h"
-
+#include <TCC/utils/TCC_error.h>
+#include <stdint.h>
 
 
 #ifdef __cplusplus
@@ -31,9 +27,8 @@ typedef struct TCC_Date
 
 TCC_Error TCC_moneyNotesCreate(TCC_MoneyNotes** moneyNoterPP, const size_t length);
 void TCC_moneyNotesDel(TCC_MoneyNotes** moneyNoterPP);
-
-TCC_Error TCC_moneyNotesInsert(TCC_MoneyNotes *moneyNotesP, const TCC_Money money,
-                               const TCC_Date date);
+void TCC_moneyNotesInsert(TCC_MoneyNotes* moneyNotesP, const TCC_Money money, 
+    const TCC_Date date);
 size_t TCC_moneyNotesGetCapacity(const TCC_MoneyNotes* moneyNotesP);
 
 TCC_Money TCC_moneyYearSum(const TCC_MoneyNotes * notesPtr, const TCC_DateYear year);
@@ -48,3 +43,4 @@ TCC_Error TCC_moneyNotesLoadTmp(TCC_MoneyNotes* moneyNotesP);
 
 
 #endif
+
