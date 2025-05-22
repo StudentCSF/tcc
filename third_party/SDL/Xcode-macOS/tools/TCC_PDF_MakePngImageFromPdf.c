@@ -8,7 +8,7 @@
 #include <ImageIO/ImageIO.h>
 #include <My_display_pdf_page.h>
 
-void Make_png_image_from_pdf(char *path) {
+void TCC_PDF_MakePngImageFromPdf(char *path) {
     const size_t pageNumber = 1;
     
     CGRect mediaBox = CGRectMake(0, 0, 595, 842); // Размер A4
@@ -23,7 +23,7 @@ void Make_png_image_from_pdf(char *path) {
         kCGImageAlphaPremultipliedLast
     );
     
-    My_display_pdf_page(context, pageNumber, path);
+    TCC_PDF_MyDisplayPdfPage(context, pageNumber, path);
     
     CGImageRef image = CGBitmapContextCreateImage(context);
     CFURLRef outputURL = CFURLCreateWithFileSystemPath(

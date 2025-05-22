@@ -8,14 +8,14 @@
 #include <CoreGraphics/CoreGraphics.h>
 #include <CoreFoundation/CoreFoundation.h>
 #include <My_get_pdf_document_ref.h>
-#include <My_display_pdf_page.h>
+#include <TCC_PDF_My_display_pdf_page.h>
 
-void Print_pdf_content(const char* filePath) {
+void TCC_PDF_Print_pdf_content(const char* filePath) {
     CGPDFDocumentRef document;
  
-    document = My_get_pdf_document_ref(filePath);
+    document = TCC_PDF_My_get_pdf_document_ref(filePath);
     CGPDFPageRef page = CGPDFDocumentGetPage(document, 1);
-    CFStringRef extractedText = Extract_text_from_pdf_page(page);
+    CFStringRef extractedText = TCC_PDF_Extract_text_from_pdf_page(page);
     
     char buffer[4096];
     CFStringGetCString(extractedText, buffer, sizeof(buffer), kCFStringEncodingUTF8);

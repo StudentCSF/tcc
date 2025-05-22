@@ -34,15 +34,14 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		1EC3206A053C47DDB36A1A13 /* User.c in Sources */ = {isa = PBXBuildFile; fileRef = 464E5595401D430FA5FC214F /* User.c */; };
-		336CEAA93DBF45349AEBD2A4 /* Print_pdf_content.c in Sources */ = {isa = PBXBuildFile; fileRef = A3BFB093F33040A6A752B6A3 /* Print_pdf_content.c */; };
+		1EC3206A053C47DDB36A1A13 /* TCC_user_User.c in Sources */ = {isa = PBXBuildFile; fileRef = 464E5595401D430FA5FC214F /* TCC_user_User.c */; };
+		336CEAA93DBF45349AEBD2A4 /* TCC_PDF_PrintPdfContent.c in Sources */ = {isa = PBXBuildFile; fileRef = A3BFB093F33040A6A752B6A3 /* TCC_PDF_PrintPdfContent.c */; };
 		3602A26BC8F643499B4DF8F0 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 83F5B4DB59A24588A5D23FFC /* main.c */; };
-		A93D3A0C32514620AB3B7983 /* Create_pdf_file.c in Sources */ = {isa = PBXBuildFile; fileRef = CA151B407C5649A7B89C74C1 /* Create_pdf_file.c */; };
-		B01AD9C1A0384DD09D234BD4 /* Make_png_image_from_pdf.c in Sources */ = {isa = PBXBuildFile; fileRef = FDA727A816154B6785B8D377 /* Make_png_image_from_pdf.c */; };
-		C9061055F92641948F409026 /* Check_fonts_on_page.c in Sources */ = {isa = PBXBuildFile; fileRef = 783A3BE45B274F0C888C9440 /* Check_fonts_on_page.c */; };
-		E90478E9F13C4974BF1B528C /* My_get_pdf_document_ref.c in Sources */ = {isa = PBXBuildFile; fileRef = C82A6C9485094011973E9273 /* My_get_pdf_document_ref.c */; };
-		EFC1FFF819514CF48BE1A49C /* My_display_pdf_page.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D2092FA9AC2487992F550CE /* My_display_pdf_page.c */; };
-		FB30F5942DDBCA7B00686BC2 /* PrintPDFPageCount.c in Sources */ = {isa = PBXBuildFile; fileRef = FB30F5932DDBCA7B00686BC2 /* PrintPDFPageCount.c */; };
+		A93D3A0C32514620AB3B7983 /* TCC_PDF_CreatePdfFile.c in Sources */ = {isa = PBXBuildFile; fileRef = CA151B407C5649A7B89C74C1 /* TCC_PDF_CreatePdfFile.c */; };
+		B01AD9C1A0384DD09D234BD4 /* TCC_PDF_MakePngImageFromPdf.c in Sources */ = {isa = PBXBuildFile; fileRef = FDA727A816154B6785B8D377 /* TCC_PDF_MakePngImageFromPdf.c */; };
+		C9061055F92641948F409026 /* TCC_PDF_CheckFontsOnPage.c in Sources */ = {isa = PBXBuildFile; fileRef = 783A3BE45B274F0C888C9440 /* TCC_PDF_CheckFontsOnPage.c */; };
+		E90478E9F13C4974BF1B528C /* TCC_PDF_MyGetPdfDocumentRef.c in Sources */ = {isa = PBXBuildFile; fileRef = C82A6C9485094011973E9273 /* TCC_PDF_MyGetPdfDocumentRef.c */; };
+		EFC1FFF819514CF48BE1A49C /* TCC_PDF_MyDisplayPdfPage.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D2092FA9AC2487992F550CE /* TCC_PDF_MyDisplayPdfPage.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,22 +69,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3D2092FA9AC2487992F550CE /* My_display_pdf_page.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = My_display_pdf_page.c; path = core/My_display_pdf_page.c; sourceTree = SOURCE_ROOT; };
-		464E5595401D430FA5FC214F /* User.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; path = User.c; sourceTree = SOURCE_ROOT; };
+		3D2092FA9AC2487992F550CE /* TCC_PDF_MyDisplayPdfPage.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = TCC_PDF_MyDisplayPdfPage.c; path = core/TCC_PDF_MyDisplayPdfPage.c; sourceTree = SOURCE_ROOT; };
+		464E5595401D430FA5FC214F /* TCC_user_User.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; path = TCC_user_User.c; sourceTree = SOURCE_ROOT; };
 		6FEFD1EDAB574BF0908CB0FB /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
 		75545D8899594FFD87122E78 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		783A3BE45B274F0C888C9440 /* Check_fonts_on_page.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = Check_fonts_on_page.c; path = core/Check_fonts_on_page.c; sourceTree = SOURCE_ROOT; };
+		783A3BE45B274F0C888C9440 /* TCC_PDF_CheckFontsOnPage.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = TCC_PDF_CheckFontsOnPage.c; path = core/TCC_PDF_CheckFontsOnPage.c; sourceTree = SOURCE_ROOT; };
 		83F5B4DB59A24588A5D23FFC /* main.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; path = main.c; sourceTree = SOURCE_ROOT; };
 		92F8C638EAD044159751C934 /* exporter-tcc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "exporter-tcc"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A3BFB093F33040A6A752B6A3 /* Print_pdf_content.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = Print_pdf_content.c; path = core/Print_pdf_content.c; sourceTree = SOURCE_ROOT; };
+		A3BFB093F33040A6A752B6A3 /* TCC_PDF_PrintPdfContent.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = TCC_PDF_PrintPdfContent.c; path = core/TCC_PDF_PrintPdfContent.c; sourceTree = SOURCE_ROOT; };
 		A444BA0E998244F8AFC3E908 /* CoreFoundation.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
-		C82A6C9485094011973E9273 /* My_get_pdf_document_ref.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = My_get_pdf_document_ref.c; path = core/My_get_pdf_document_ref.c; sourceTree = SOURCE_ROOT; };
-		CA151B407C5649A7B89C74C1 /* Create_pdf_file.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = Create_pdf_file.c; path = core/Create_pdf_file.c; sourceTree = SOURCE_ROOT; };
+		C82A6C9485094011973E9273 /* TCC_PDF_MyGetPdfDocumentRef.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = TCC_PDF_MyGetPdfDocumentRef.c; path = core/TCC_PDF_MyGetPdfDocumentRef.c; sourceTree = SOURCE_ROOT; };
+		CA151B407C5649A7B89C74C1 /* TCC_PDF_CreatePdfFile.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = TCC_PDF_CreatePdfFile.c; path = core/TCC_PDF_CreatePdfFile.c; sourceTree = SOURCE_ROOT; };
 		D38D7E2899EF4012A9BB2740 /* AppKit.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		E0E75079D6224E8BB747DF24 /* CoreText.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = "<absolute>"; };
 		F409304EF333432D8E39607E /* CoreGraphics.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = "<absolute>"; };
-		FB30F5932DDBCA7B00686BC2 /* PrintPDFPageCount.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = PrintPDFPageCount.c; sourceTree = "<group>"; };
-		FDA727A816154B6785B8D377 /* Make_png_image_from_pdf.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = Make_png_image_from_pdf.c; path = tools/Make_png_image_from_pdf.c; sourceTree = SOURCE_ROOT; };
+		FDA727A816154B6785B8D377 /* TCC_PDF_MakePngImageFromPdf.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = TCC_PDF_MakePngImageFromPdf.c; path = tools/TCC_PDF_MakePngImageFromPdf.c; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,15 +162,14 @@
 		FCBC7EB9703A40089B7756D8 /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
-				464E5595401D430FA5FC214F /* User.c */,
-				783A3BE45B274F0C888C9440 /* Check_fonts_on_page.c */,
-				CA151B407C5649A7B89C74C1 /* Create_pdf_file.c */,
-				3D2092FA9AC2487992F550CE /* My_display_pdf_page.c */,
-				C82A6C9485094011973E9273 /* My_get_pdf_document_ref.c */,
-				A3BFB093F33040A6A752B6A3 /* Print_pdf_content.c */,
+				464E5595401D430FA5FC214F /* TCC_user_User.c */,
+				783A3BE45B274F0C888C9440 /* TCC_PDF_CheckFontsOnPage.c */,
+				CA151B407C5649A7B89C74C1 /* TCC_PDF_CreatePdfFile.c */,
+				3D2092FA9AC2487992F550CE /* TCC_PDF_MyDisplayPdfPage.c */,
+				C82A6C9485094011973E9273 /* TCC_PDF_MyGetPdfDocumentRef.c */,
+				A3BFB093F33040A6A752B6A3 /* TCC_PDF_PrintPdfContent.c */,
 				83F5B4DB59A24588A5D23FFC /* main.c */,
-				FB30F5932DDBCA7B00686BC2 /* PrintPDFPageCount.c */,
-				FDA727A816154B6785B8D377 /* Make_png_image_from_pdf.c */,
+				FDA727A816154B6785B8D377 /* TCC_PDF_MakePngImageFromPdf.c */,
 			);
 			name = "Source Files";
 			sourceTree = "<group>";
@@ -266,15 +263,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EC3206A053C47DDB36A1A13 /* User.c in Sources */,
-				FB30F5942DDBCA7B00686BC2 /* PrintPDFPageCount.c in Sources */,
-				C9061055F92641948F409026 /* Check_fonts_on_page.c in Sources */,
-				A93D3A0C32514620AB3B7983 /* Create_pdf_file.c in Sources */,
-				EFC1FFF819514CF48BE1A49C /* My_display_pdf_page.c in Sources */,
-				E90478E9F13C4974BF1B528C /* My_get_pdf_document_ref.c in Sources */,
-				336CEAA93DBF45349AEBD2A4 /* Print_pdf_content.c in Sources */,
+				1EC3206A053C47DDB36A1A13 /* TCC_user_User.c in Sources */,
+				C9061055F92641948F409026 /* TCC_PDF_CheckFontsOnPage.c in Sources */,
+				A93D3A0C32514620AB3B7983 /* TCC_PDF_CreatePdfFile.c in Sources */,
+				EFC1FFF819514CF48BE1A49C /* TCC_PDF_MyDisplayPdfPage.c in Sources */,
+				E90478E9F13C4974BF1B528C /* TCC_PDF_MyGetPdfDocumentRef.c in Sources */,
+				336CEAA93DBF45349AEBD2A4 /* TCC_PDF_PrintPdfContent.c in Sources */,
 				3602A26BC8F643499B4DF8F0 /* main.c in Sources */,
-				B01AD9C1A0384DD09D234BD4 /* Make_png_image_from_pdf.c in Sources */,
+				B01AD9C1A0384DD09D234BD4 /* TCC_PDF_MakePngImageFromPdf.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,7 @@
 #include <CoreFoundation/CoreFoundation.h>
 #include <My_get_pdf_document_ref.h>
 
-static void op_TJ(CGPDFScannerRef scanner, void *info) {
+static void TCC_PDF_OpTJ(CGPDFScannerRef scanner, void *info) {
     CGPDFArrayRef array;
     if (!CGPDFScannerPopArray(scanner, &array)) return;
     
@@ -35,11 +35,11 @@ static void op_TJ(CGPDFScannerRef scanner, void *info) {
     }
 }
 
-CFStringRef Extract_text_from_pdf_page(CGPDFPageRef page) {
+CFStringRef TCC_PDF_ExtractTextFromPdfPage(CGPDFPageRef page) {
     CGPDFContentStreamRef contentStream = CGPDFContentStreamCreateWithPage(page);
     
     CGPDFOperatorTableRef table = CGPDFOperatorTableCreate();
-    CGPDFOperatorTableSetCallback(table, "TJ", op_TJ);
+    CGPDFOperatorTableSetCallback(table, "TJ", TCC_PDF_OpTJ);
     
     CFMutableStringRef result = CFStringCreateMutable(NULL, 0);
     CGPDFScannerRef scanner = CGPDFScannerCreate(contentStream, table, result);
@@ -53,17 +53,14 @@ CFStringRef Extract_text_from_pdf_page(CGPDFPageRef page) {
     return result;
 }
 
-//#include <CoreGraphics/CoreGraphics.h>
-//#include <CoreFoundation/CoreFoundation.h>
-
-void My_display_pdf_page(CGContextRef myContext,
+void TCC_PDF_MyDisplayPdfPage(CGContextRef myContext,
                     size_t pageNumber,
                     const char *filename)
 {
     CGPDFDocumentRef document;
     CGPDFPageRef page;
  
-    document = My_get_pdf_document_ref (filename);
+    document = TCC_PDF_MyGetPdfDocumentRef (filename);
     page = CGPDFDocumentGetPage (document, pageNumber);
     CGContextDrawPDFPage (myContext, page);
     CGPDFDocumentRelease (document);
