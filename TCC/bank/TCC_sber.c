@@ -13,13 +13,13 @@ typedef struct {
     TCC_card_Credit* credits;
 } TCC_sber_Cache;
 
-static TCC_sber_Cache* get_sber_cache() {
+static TCC_sber_Cache* TCC_sber_cache_Get() {
     static TCC_sber_Cache s_cache = {0};
     return &s_cache;
 }
 
 static void TCC_demo_data_Init() {
-    TCC_sber_Cache* cache = get_sber_cache();
+    TCC_sber_Cache* cache = TCC_sber_cache_Get();
     
     static TCC_bank_Transaction sber_transactions[] = {
         {.date = 1672531200, .amount = 150000.0, .currency = "RUB", .type = "salary", .status = "completed"},
@@ -48,7 +48,7 @@ static void TCC_demo_data_Init() {
 }
 
 static TCC_bank_api_Status TCC_sber_GetTransactions(const char* employee_id, TCC_bank_Transaction** transactions, size_t* count) {
-    TCC_sber_Cache* cache = get_sber_cache();
+    TCC_sber_Cache* cache = TCC_sber_cache_Get();
     if(strncmp(employee_id, "sber_", 5) != 0) {
         return TCC_bank_api_error_auth;
     }
@@ -72,7 +72,7 @@ static TCC_bank_api_Status TCC_sber_GetInn(const char* employee_id, char* inn, s
 }
 
 static TCC_bank_api_Status TCC_sber_GetInterestRates(const char* employee_id, TCC_loan_interest_Rate** rates, size_t* count) {
-    TCC_sber_Cache* cache = get_sber_cache();
+    TCC_sber_Cache* cache = TCC_sber_cache_Get();
     if(strncmp(employee_id, "sber_", 5) != 0) {
         return TCC_bank_api_error_auth;
     }
@@ -83,7 +83,7 @@ static TCC_bank_api_Status TCC_sber_GetInterestRates(const char* employee_id, TC
 }
 
 static TCC_bank_api_Status TCC_sber_GetCardCredits(const char* employee_id, TCC_card_Credit** credits, size_t* count) {
-    TCC_sber_Cache* cache = get_sber_cache();
+    TCC_sber_Cache* cache = TCC_sber_cache_Get();
     if(strncmp(employee_id, "sber_", 5) != 0) {
         return TCC_bank_api_error_auth;
     }
@@ -106,7 +106,7 @@ const TCC_bank_Api* TCC_sber_InitApi() {
 }
 
 void TCC_sber_CleanupApi() {
-    TCC_sber_Cache* cache = get_sber_cache();
+    TCC_sber_Cache* cache = TCC_sber_cache_Get();
     free(cache->transactions);
     free(cache->rates);
     free(cache->credits);

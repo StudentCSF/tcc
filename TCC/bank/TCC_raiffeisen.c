@@ -16,13 +16,13 @@ typedef struct {
     char auth_token[64];
 } TCC_raiffeisen_Cache;
 
-static TCC_raiffeisen_Cache* get_r_cache() {
+static TCC_raiffeisen_Cache* TCC_r_cache_Get() {
     static TCC_raiffeisen_Cache r_cache = {0};
     return &r_cache;
 }
 
 static void TCC_demo_data_Init(const char* auth_token) {
-    TCC_raiffeisen_Cache* cache = get_r_cache();
+    TCC_raiffeisen_Cache* cache = TCC_r_cache_Get();
     strncpy(cache->auth_token, auth_token, sizeof(cache->auth_token)-1);
     
     static TCC_bank_Transaction raif_transactions[] = {
@@ -57,7 +57,7 @@ static void TCC_demo_data_Init(const char* auth_token) {
 }
 
 static TCC_bank_api_Status TCC_raif_GetTransactions(const char* employee_id, TCC_bank_Transaction** transactions, size_t* count) {
-    TCC_raiffeisen_Cache* cache = get_r_cache();
+    TCC_raiffeisen_Cache* cache = TCC_r_cache_Get();
     if(strncmp(employee_id, "raif_", 5) != 0) {
         return TCC_bank_api_error_auth;
     }
@@ -81,7 +81,7 @@ static TCC_bank_api_Status TCC_raif_GetInn(const char* employee_id, char* inn, s
 }
 
 static TCC_bank_api_Status TCC_raif_GetInterestRates(const char* employee_id, TCC_loan_interest_Rate** rates, size_t* count) {
-    TCC_raiffeisen_Cache* cache = get_r_cache();
+    TCC_raiffeisen_Cache* cache = TCC_r_cache_Get();
     if(strncmp(employee_id, "raif_", 5) != 0) {
         return TCC_bank_api_error_auth;
     }
@@ -92,7 +92,7 @@ static TCC_bank_api_Status TCC_raif_GetInterestRates(const char* employee_id, TC
 }
 
 static TCC_bank_api_Status TCC_raif_GetCardCredits(const char* employee_id, TCC_card_Credit** credits, size_t* count) {
-    TCC_raiffeisen_Cache* cache = get_r_cache();
+    TCC_raiffeisen_Cache* cache = TCC_r_cache_Get();
     if(strncmp(employee_id, "raif_", 5) != 0) {
         return TCC_bank_api_error_auth;
     }
@@ -103,7 +103,7 @@ static TCC_bank_api_Status TCC_raif_GetCardCredits(const char* employee_id, TCC_
 }
 
 static TCC_bank_api_Status TCC_raif_GetEmployeeInfo(const char* employee_id, TCC_raiffeisen_employee_Info* info) {
-    TCC_raiffeisen_Cache* cache = get_r_cache();
+    TCC_raiffeisen_Cache* cache = TCC_r_cache_Get();
     if(strncmp(employee_id, "raif_", 5) != 0) {
         return TCC_bank_api_error_auth;
     }
@@ -129,7 +129,7 @@ const TCC_bank_Api* TCC_raiffeisen_InitApi(const char* auth_token) {
 }
 
 void TCC_raiffeisen_CleanupApi() {
-    TCC_raiffeisen_Cache* cache = get_r_cache();
+    TCC_raiffeisen_Cache* cache = TCC_r_cache_Get();
     free(cache->transactions);
     free(cache->rates);
     free(cache->credits);

@@ -17,15 +17,15 @@ typedef struct {
     TCC_bank_Entry* banks;
     const TCC_bank_Api* active_bank;
     void* active_context;
-} TCC_BankSystem;
+} TCC_bank_System;
 
-static TCC_BankSystem* get_bank_system() {
-    static TCC_BankSystem bank_system = {0};
+static TCC_bank_System* TCC_bank_system_Get() {
+    static TCC_bank_System bank_system = {0};
     return &bank_system;
 }
 
 static TCC_bank_Entry* TCC_FindBankEntry(const char* bank_name) {
-    TCC_BankSystem* system = get_bank_system();
+    TCC_bank_System* system = TCC_bank_system_Get();
     TCC_bank_Entry* entry = system->banks;
     while (entry != NULL) {
         if (strcmp(entry->bank_name, bank_name) == 0) {
@@ -50,7 +50,7 @@ TCC_bank_api_Status TCC_RegisterBank(const char* bank_name, const TCC_bank_Api* 
         return TCC_bank_api_error_memory;
     }
 
-    TCC_BankSystem* system = get_bank_system();
+    TCC_bank_System* system = TCC_bank_system_Get();
     new_entry->bank_name = strdup(bank_name);
     new_entry->api = api;
     new_entry->context = init_context;
@@ -61,7 +61,7 @@ TCC_bank_api_Status TCC_RegisterBank(const char* bank_name, const TCC_bank_Api* 
 }
 
 TCC_bank_api_Status TCC_UnregisterBank(const char* bank_name) {
-    TCC_BankSystem* system = get_bank_system();
+    TCC_bank_System* system = TCC_bank_system_Get();
     TCC_bank_Entry** ptr = &system->banks;
     while (*ptr != NULL) {
         TCC_bank_Entry* entry = *ptr;
@@ -82,14 +82,14 @@ TCC_bank_api_Status TCC_SetActiveBank(const char* bank_name) {
         return TCC_bank_api_error_not_found;
     }
 
-    TCC_BankSystem* system = get_bank_system();
+    TCC_bank_System* system = TCC_bank_system_Get();
     system->active_bank = entry->api;
     system->active_context = entry->context;
     return TCC_bank_api_ok;
 }
 
 const char* TCC_GetActiveBankName() {
-    TCC_BankSystem* system = get_bank_system();
+    TCC_bank_System* system = TCC_bank_system_Get();
     TCC_bank_Entry* entry = system->banks;
     while (entry != NULL) {
         if (entry->api == system->active_bank) {
@@ -101,7 +101,7 @@ const char* TCC_GetActiveBankName() {
 }
 
 TCC_bank_api_Status TCC_GetTransactions(const char* employee_id, TCC_bank_Transaction** transactions, size_t* count) {
-    TCC_BankSystem* system = get_bank_system();
+    TCC_bank_System* system = TCC_bank_system_Get();
     if (system->active_bank == NULL) {
         return TCC_bank_api_error_no_bank;
     }
@@ -118,7 +118,7 @@ TCC_bank_api_Status TCC_GetTransactions(const char* employee_id, TCC_bank_Transa
 }
 
 TCC_bank_api_Status TCC_GetInn(const char* employee_id, char* inn_buffer, size_t buffer_size) {
-    TCC_BankSystem* system = get_bank_system();
+    TCC_bank_System* system = TCC_bank_system_Get();
     if (system->active_bank == NULL) {
         return TCC_bank_api_error_no_bank;
     }
@@ -135,7 +135,7 @@ TCC_bank_api_Status TCC_GetInn(const char* employee_id, char* inn_buffer, size_t
 }
 
 TCC_bank_api_Status TCC_GetInterestRates(const char* employee_id, TCC_loan_interest_Rate** rates, size_t* count) {
-    TCC_BankSystem* system = get_bank_system();
+    TCC_bank_System* system = TCC_bank_system_Get();
     if (system->active_bank == NULL) {
         return TCC_bank_api_error_no_bank;
     }
@@ -152,7 +152,7 @@ TCC_bank_api_Status TCC_GetInterestRates(const char* employee_id, TCC_loan_inter
 }
 
 TCC_bank_api_Status TCC_GetCardCredits(const char* employee_id, TCC_card_Credit** credits, size_t* count) {
-    TCC_BankSystem* system = get_bank_system();
+    TCC_bank_System* system = TCC_bank_system_Get();
     if (system->active_bank == NULL) {
         return TCC_bank_api_error_no_bank;
     }
@@ -169,7 +169,7 @@ TCC_bank_api_Status TCC_GetCardCredits(const char* employee_id, TCC_card_Credit*
 }
 
 void TCC_CleanupAll() {
-    TCC_BankSystem* system = get_bank_system();
+    TCC_bank_System* system = TCC_bank_system_Get();
     TCC_bank_Entry* entry = system->banks;
     while (entry != NULL) {
         TCC_bank_Entry* next = entry->next;

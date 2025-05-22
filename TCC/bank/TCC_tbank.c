@@ -15,13 +15,13 @@ typedef struct {
     TCC_tbank_auth_Context auth_ctx;
 } TCC_tbank_Cache;
 
-static TCC_tbank_Cache* get_tbank_cache() {
+static TCC_tbank_Cache* TCC_tbank_cache_Get() {
     static TCC_tbank_Cache t_cache = {0};
     return &t_cache;
 }
 
 static void TCC_demo_data_Init(const TCC_tbank_auth_Context* auth) {
-    TCC_tbank_Cache* cache = get_tbank_cache();
+    TCC_tbank_Cache* cache = TCC_tbank_cache_Get();
     memcpy(&cache->auth_ctx, auth, sizeof(TCC_tbank_auth_Context));
 
     static TCC_bank_Transaction tbank_transactions[] = {
@@ -51,7 +51,7 @@ static void TCC_demo_data_Init(const TCC_tbank_auth_Context* auth) {
 }
 
 static TCC_bank_api_Status TCC_tbank_GetTransactions(const char* employee_id, TCC_bank_Transaction** transactions, size_t* count) {
-    TCC_tbank_Cache* cache = get_tbank_cache();
+    TCC_tbank_Cache* cache = TCC_tbank_cache_Get();
     if(strncmp(employee_id, "tbank_", 6) != 0) {
         return TCC_bank_api_error_auth;
     }
@@ -75,7 +75,7 @@ static TCC_bank_api_Status TCC_tbank_GetInn(const char* employee_id, char* inn, 
 }
 
 static TCC_bank_api_Status TCC_tbank_GetInterestRates(const char* employee_id, TCC_loan_interest_Rate** rates, size_t* count) {
-    TCC_tbank_Cache* cache = get_tbank_cache();
+    TCC_tbank_Cache* cache = TCC_tbank_cache_Get();
     if(strncmp(employee_id, "tbank_", 6) != 0) {
         return TCC_bank_api_error_auth;
     }
@@ -86,7 +86,7 @@ static TCC_bank_api_Status TCC_tbank_GetInterestRates(const char* employee_id, T
 }
 
 static TCC_bank_api_Status TCC_tbank_GetCardCredits(const char* employee_id, TCC_card_Credit** credits, size_t* count) {
-    TCC_tbank_Cache* cache = get_tbank_cache();
+    TCC_tbank_Cache* cache = TCC_tbank_cache_Get();
     if(strncmp(employee_id, "tbank_", 6) != 0) {
         return TCC_bank_api_error_auth;
     }
@@ -113,7 +113,7 @@ const TCC_bank_Api* TCC_tbank_InitApi(const TCC_tbank_auth_Context* auth) {
 }
 
 void TCC_tbank_CleanupApi() {
-    TCC_tbank_Cache* cache = get_tbank_cache();
+    TCC_tbank_Cache* cache = TCC_tbank_cache_Get();
     free(cache->transactions);
     free(cache->rates);
     free(cache->credits);
