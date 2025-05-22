@@ -1,0 +1,3 @@
+/Users/daniil/tcc/TCC/PDF/external/libzip/build/CMakeFiles/CMakeScratch/TryCompile-f6b6ym/CMakeFiles/cmTC_6d901.dir
+/Users/daniil/tcc/TCC/PDF/external/libzip/build/CMakeFiles/CMakeScratch/TryCompile-f6b6ym/CMakeFiles/edit_cache.dir
+/Users/daniil/tcc/TCC/PDF/external/libzip/build/CMakeFiles/CMakeScratch/TryCompile-f6b6ym/CMakeFiles/rebuild_cache.dir
