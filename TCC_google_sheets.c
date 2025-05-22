@@ -1,11 +1,4 @@
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <math.h>
-#include <stdbool.h>
-#include <curl/curl.h>
-#include <cJSON.h>
+#include <TCC_google_sheets.h>
 
 
 // Объявляем прототипы функций для Windows
@@ -32,18 +25,6 @@ char* strndup(const char* s, size_t n) {
     }
     return new;
 }
-
-// Структуры данных
-typedef struct {
-    char* access_token;
-    char* spreadsheet_id;
-} TCC_gsheet_Client;
-
-typedef struct {
-    char*** data;
-    size_t rows;
-    size_t cols;
-} TCC_gsheet_Range;
 
 /**
  * ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ
@@ -363,8 +344,7 @@ char* TCC_gsheet_SendRequest(TCC_gsheet_Client* client, char* url, char* payload
     // Получение HTTP-статуса
     curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &http_code);
 
-    // TODO: 
-    // Расширенная диагностика TODO: (NEW FUNC MAKE)
+    // Расширенная диагностика
     if (res != CURLE_OK) {
         fprintf(stderr, "CURL error: %s\n", curl_easy_strerror(res));
         
@@ -392,11 +372,6 @@ char* TCC_gsheet_SendRequest(TCC_gsheet_Client* client, char* url, char* payload
 
     return response;
 }
-
-typedef struct {
-    int sheet_id;
-    char* title;
-} TCC_gsheet_Info;
 
 /**
  * Получает информацию о листе (id и название)
@@ -675,15 +650,3 @@ int TCC_gsheet_TestClearRange() {
     }
 }
 ////////////////////////////////
-
-int main() {
-    //Инициализация клиента
-    const char* access_token = "token";
-    const char* spreadsheet_id = "";
-    TCC_gsheet_Client* client = TCC_gsheet_Init(access_token, spreadsheet_id);
-    
-    if (!client) {
-        fprintf(stderr, "Cannot init client\n");
-        return 1;
-    }
-}
