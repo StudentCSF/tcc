@@ -6,7 +6,7 @@
 //
 
 #include <ImageIO/ImageIO.h>
-#include <My_display_pdf_page.h>
+#include <TCC_PDF_MyDisplayPdfPage.h>
 
 void TCC_PDF_MakePngImageFromPdf(char *path) {
     const size_t pageNumber = 1;

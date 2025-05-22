@@ -1,43 +1,41 @@
-//
-//  user.h
-//  exporter-tcc
-//
-//  Created by Daniil Shmoylov on 16.05.2025.
-//
-
-#ifndef USER_H
-#define USER_H
+#ifndef TCC_USER_USER_H
+#define TCC_USER_USER_H
 
 #include <stdbool.h>
+#include <stdlib.h>
 
-typedef enum { MALE, FEMALE, OTHER } Gender;
+typedef enum {
+    TCC_kMales,
+    TCC_kFemales,
+    TCC_kOther
+} TCC_user_Gender;
 
 typedef struct {
-    int day;
-    int month;
-    int year;
-} Date;
+    int TCC_kDay;
+    int TCC_kMonth;
+    int TCC_kYear;
+} TCC_user_Date;
 
 typedef struct {
-    char* street;
-    char* city;
-    char* postal_code;
-} Address;
+    char* TCC_kStreet;
+    char* TCC_kCity;
+    char* TCC_kPostal_code;
+} TCC_user_Address;
 
 typedef struct {
     int id;
-    char* username;
-    char* email;
-    int age;
-    Date registration_date;
-    bool is_active;
-    float rating;
-    double salary;
-    Gender gender;
-    Address address;
-} User;
+    char* TCC_kUsername;
+    char* TCC_kEmail;
+    int TCC_kAge;
+    TCC_user_Date TCC_kRegistration_date;
+    bool TCC_kIs_active;
+    float TCC_kRating;
+    double TCC_kSalary;
+    TCC_user_Gender TCC_kGender;
+    TCC_user_Address TCC_kAddress;
+} TCC_user_User;
 
-User Create_user(void);
-void Free_user(User* user);
+TCC_user_User TCC_user_CreateUser(void);
+void TCC_user_FreeUser(TCC_user_User* user);
 
 #endif

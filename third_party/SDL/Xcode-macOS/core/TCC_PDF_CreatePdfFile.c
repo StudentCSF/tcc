@@ -8,7 +8,7 @@
 #include <CoreGraphics/CoreGraphics.h>
 #include <CoreFoundation/CoreFoundation.h>
 #include <CoreText/CoreText.h>
-#include <User.h>
+#include <TCC_user_User.h>
 
 // Вспомогательная функция для создания CFString из строки
 CFStringRef TCC_PDF_CreateCfStringFromCstring(const char* cstr) {

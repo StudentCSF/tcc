@@ -10,7 +10,7 @@
 #include <CoreGraphics/CoreGraphics.h>
 #include <CoreText/CoreText.h>
 #include <CoreFoundation/CoreFoundation.h>
-#include <My_get_pdf_document_ref.h>
+#include <TCC_PDF_MyGetPdfDocumentRef.h>
 
 static void TCC_PDF_OpTJ(CGPDFScannerRef scanner, void *info) {
     CGPDFArrayRef array;

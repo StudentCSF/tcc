@@ -8,14 +8,15 @@
 #include <CoreFoundation/CoreFoundation.h>
 #include <CoreGraphics/CoreGraphics.h>
 #include <stdbool.h>
+#include <TCC_user_User.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-void TCC_PDF_MyDrawContent(CGContextRef context, User userInfo);
+void TCC_PDF_MyDrawContent(CGContextRef context, TCC_user_User userInfo);
 
-void TCC_PDF_CreatePdfFile(CGRect pageRect, const char *filename, User userInfo);
+void TCC_PDF_CreatePdfFile(CGRect pageRect, const char *filename, TCC_user_User userInfo);
 
 // MARK: - Basic PDF Operations
 
@@ -64,5 +65,3 @@ void TCC_PDF_Process_ocg(CGPDFDictionaryRef ocgDict, int level);
 #ifdef __cplusplus
 }
 #endif
-
-#endif /* TCCPDFUtils_h */

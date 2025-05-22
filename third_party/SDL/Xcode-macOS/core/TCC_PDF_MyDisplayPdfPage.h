@@ -21,7 +21,7 @@
  
  @note Документ автоматически освобождается после отрисовки.
 */
-void My_display_pdf_page(CGContextRef myContext, size_t pageNumber, const char *filename);
+void TCC_PDF_MyDisplayPdfPage(CGContextRef myContext, size_t pageNumber, const char *filename);
 
-CFStringRef Extract_text_from_pdf_page(CGPDFPageRef page);
+CFStringRef TCC_PDF_ExtractTextFromPdfPage(CGPDFPageRef page);
 #endif // MY_PDF_RENDERER_H

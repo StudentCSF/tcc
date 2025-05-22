@@ -6,15 +6,15 @@
 //
 
 #include <stdio.h>
-#include <User.h>
+#include <TCC_user_User.h>
 //MARK: – указатели
 //TODO: -  убрать галочки добавить cmake
 //TODO: -  именования добавить
-#include <Create_pdf_file.h>
-#include <My_display_pdf_page.h>
-#include <Print_pdf_content.h>
-#include <My_get_pdf_document_ref.h>
-#include <Check_fonts_on_page.h>
+#include <TCC_PDF_CreatePdfFile.h>
+#include <TCC_PDF_MyDisplayPdfPage.h>
+#include <TCC_PDF_PrintPdfContent.h>
+#include <TCC_PDF_MyGetPdfDocumentRef.h>
+#include <TCC_PDF_CheckFontsOnPage.h>
 #include <CoreGraphics/CoreGraphics.h>
 #include <string.h>
 #include <sys/stat.h>

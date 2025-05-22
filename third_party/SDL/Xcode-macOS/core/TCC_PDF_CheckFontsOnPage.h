@@ -14,7 +14,7 @@
 extern "C" {
 #endif
 
-void Check_fonts_on_page(CGPDFPageRef page);
+void TCC_PDF_CheckFontsOnPage(CGPDFPageRef page);
 
 #ifdef __cplusplus
 }

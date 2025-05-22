@@ -5,10 +5,10 @@ empty:=
 space:= $(empty) $(empty)
 spaceplus:= $(empty)\ $(empty)
 
-TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/daniilshmoylov/Downloads/проект\ по\ C/exporter-tcc/CMakeFiles/4.0.2/CMakeCCompiler.cmake))
-TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/daniilshmoylov/Downloads/проект\ по\ C/exporter-tcc/CMakeFiles/4.0.2/CMakeCXXCompiler.cmake))
-TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/daniilshmoylov/Downloads/проект\ по\ C/exporter-tcc/CMakeFiles/4.0.2/CMakeSystem.cmake))
-TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/daniilshmoylov/Downloads/проект\ по\ C/exporter-tcc/CMakeLists.txt))
+TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/daniilshmoylov/Downloads/проект\ по\ C/tcc/third_party/SDL/Xcode-macOS/CMakeFiles/4.0.2/CMakeCCompiler.cmake))
+TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/daniilshmoylov/Downloads/проект\ по\ C/tcc/third_party/SDL/Xcode-macOS/CMakeFiles/4.0.2/CMakeCXXCompiler.cmake))
+TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/daniilshmoylov/Downloads/проект\ по\ C/tcc/third_party/SDL/Xcode-macOS/CMakeFiles/4.0.2/CMakeSystem.cmake))
+TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/daniilshmoylov/Downloads/проект\ по\ C/tcc/third_party/SDL/Xcode-macOS/CMakeLists.txt))
 TARGETS += $(subst $(space),$(spaceplus),$(wildcard /opt/homebrew/share/cmake/Modules/CMakeCInformation.cmake))
 TARGETS += $(subst $(space),$(spaceplus),$(wildcard /opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake))
 TARGETS += $(subst $(space),$(spaceplus),$(wildcard /opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake))
@@ -40,5 +40,5 @@ TARGETS += $(subst $(space),$(spaceplus),$(wildcard /opt/homebrew/share/cmake/Mo
 TARGETS += $(subst $(space),$(spaceplus),$(wildcard /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake))
 TARGETS += $(subst $(space),$(spaceplus),$(wildcard /opt/homebrew/share/cmake/Modules/Platform/UnixPaths.cmake))
 
-/Users/daniilshmoylov/Downloads/проект\ по\ C/exporter-tcc/CMakeFiles/cmake.check_cache: $(TARGETS)
-	/opt/homebrew/bin/cmake -S/Users/daniilshmoylov/Downloads/проект\ по\ C/exporter-tcc -B/Users/daniilshmoylov/Downloads/проект\ по\ C/exporter-tcc
+/Users/daniilshmoylov/Downloads/проект\ по\ C/tcc/third_party/SDL/Xcode-macOS/CMakeFiles/cmake.check_cache: $(TARGETS)
+	/opt/homebrew/bin/cmake -S/Users/daniilshmoylov/Downloads/проект\ по\ C/tcc/third_party/SDL/Xcode-macOS -B/Users/daniilshmoylov/Downloads/проект\ по\ C/tcc/third_party/SDL/Xcode-macOS

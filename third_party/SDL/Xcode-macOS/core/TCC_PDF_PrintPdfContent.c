@@ -7,8 +7,8 @@
 
 #include <CoreGraphics/CoreGraphics.h>
 #include <CoreFoundation/CoreFoundation.h>
-#include <My_get_pdf_document_ref.h>
-#include <My_display_pdf_page.h>
+#include <TCC_PDF_MyGetPdfDocumentRef.h>
+#include <TCC_PDF_MyDisplayPdfPage.h>
 
 void TCC_PDF_PrintPdfContent(const char* filePath) {
     CGPDFDocumentRef document;
