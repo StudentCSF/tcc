@@ -37,13 +37,13 @@ char* strndup(const char* s, size_t n) {
 typedef struct {
     char* access_token;
     char* spreadsheet_id;
-} GSheetClient;
+} TCC_gsheet_Client;
 
 typedef struct {
     char*** data;
     size_t rows;
     size_t cols;
-} SheetRange;
+} TCC_gsheet_Range;
 
 /**
  * ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ
@@ -57,30 +57,6 @@ static size_t TCC_gsheet_WriteCallback(char* ptr, size_t size, size_t nmemb, voi
     return size * nmemb;
 }
 
-// WORK №1
-// Накапливание данных
-// size_t TCC_gsheet_WriteCallback(char *ptr, size_t size, size_t nmemb, void *userdata) {
-//     size_t realsize = size * nmemb;
-//     char **response_ptr = (char **)userdata;
-    
-//     // Первая итерация: создаем буфер
-//     if (*response_ptr == NULL) {
-//         *response_ptr = malloc(realsize + 1);
-//         if (*response_ptr == NULL) return 0;
-//     } 
-//     // Последующие итерации: расширяем буфер
-//     else {
-//         size_t current_size = strlen(*response_ptr);
-//         char *tmp = realloc(*response_ptr, current_size + realsize + 1);
-//         if (tmp == NULL) return 0;
-//         *response_ptr = tmp;
-//     }
-    
-//     memcpy(*response_ptr + strlen(*response_ptr), ptr, realsize);
-//     (*response_ptr)[strlen(*response_ptr) + realsize] = '\0';
-//     return realsize;
-// }
-
 /**
  * ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ
  * 
@@ -89,7 +65,7 @@ static size_t TCC_gsheet_WriteCallback(char* ptr, size_t size, size_t nmemb, voi
  * @param client Клиент
  * @return header Сформированный заголовок
  */
-static char* TCC_gsheet_BuildAuthHeader(GSheetClient* client) {
+static char* TCC_gsheet_BuildAuthHeader(TCC_gsheet_Client* client) {
     const size_t header_len = strlen("Authorization: Bearer ") + strlen(client->access_token) + 1;
     char* header = malloc(header_len);
     snprintf(header, header_len, "Authorization: Bearer %s", client->access_token);
@@ -105,8 +81,7 @@ static char* TCC_gsheet_BuildAuthHeader(GSheetClient* client) {
  * @param range Диапазон
  */
 
-//TCC_gsheet_PrintData...
-static void TCC_printDataFromGsheet(SheetRange* data, const char* range) {
+static void TCC_gsheet_PrintData(TCC_gsheet_Range* data, const char* range) {
     printf("Data from range %s:\n", range);
     for (size_t i = 0; i < data->rows; i++) {
         for (size_t j = 0; j < data->cols; j++) {
@@ -119,11 +94,11 @@ static void TCC_printDataFromGsheet(SheetRange* data, const char* range) {
 /**
  * ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ
  * 
- * Очищает память в GSheetClient
+ * Очищает память в TCC_gsheet_Client
  * 
  * @param client Клиент с данными
  */
-void TCC_gsheet_ClientFree(GSheetClient* client) {
+void TCC_gsheet_ClientFree(TCC_gsheet_Client* client) {
     if (!client) return;
     free(client->access_token);
     free(client->spreadsheet_id);
@@ -156,11 +131,11 @@ void TCC_gsheet_SanitizeJsonResponse(char *response) {
 /**
  * ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ
  * 
- * Очищает память в SheetRange
+ * Очищает память в TCC_gsheet_Range
  * 
  * @param range Диапазон
  */
-void TCC_gsheet_FreeRange(SheetRange* range) {
+void TCC_gsheet_FreeRange(TCC_gsheet_Range* range) {
     if (!range) return;
     for (size_t i = 0; i < range->rows; i++) {
         for (size_t j = 0; j < range->cols; j++) {
@@ -177,10 +152,10 @@ void TCC_gsheet_FreeRange(SheetRange* range) {
  * 
  * @param access_token Токен доступа (OAuth)
  * @param spreadsheet_id ID таблицы
- * @return GSheetClient* - Клиент с данными аутентификации
+ * @return TCC_gsheet_Client* - Клиент с данными аутентификации
  */
-GSheetClient* TCC_gsheet_Init(const char* access_token, const char* spreadsheet_id) {
-    GSheetClient* client = malloc(sizeof(GSheetClient));
+TCC_gsheet_Client* TCC_gsheet_Init(const char* access_token, const char* spreadsheet_id) {
+    TCC_gsheet_Client* client = malloc(sizeof(TCC_gsheet_Client));
     client->access_token = strdup(access_token);
     client->spreadsheet_id = strdup(spreadsheet_id);
     return client;
@@ -192,9 +167,9 @@ GSheetClient* TCC_gsheet_Init(const char* access_token, const char* spreadsheet_
  * 
  * @param client Указатель на клиент GSheets
  * @param range Диапазон в виде "Sheet1!A1:B2"
- * @return SheetRange* - Полученные данные из таблицы
+ * @return TCC_gsheet_Range* - Полученные данные из таблицы
  */
-SheetRange* TCC_gsheet_ReadRange(GSheetClient* client, const char* range) {
+TCC_gsheet_Range* TCC_gsheet_ReadRange(TCC_gsheet_Client* client, const char* range) {
     CURL* curl = curl_easy_init();
     if (!curl) {
         fprintf(stderr, "Failed to initialize CURL\n");
@@ -265,7 +240,7 @@ SheetRange* TCC_gsheet_ReadRange(GSheetClient* client, const char* range) {
     printf("Maked response -> ");
     printf(response);
 
-    SheetRange* result = NULL;
+    TCC_gsheet_Range* result = NULL;
     if (res == CURLE_OK && http_code == 200 && response) {
 
         // Парсинг ответа
@@ -284,7 +259,7 @@ SheetRange* TCC_gsheet_ReadRange(GSheetClient* client, const char* range) {
             }
 
             // Создание структуры данных
-            result = malloc(sizeof(SheetRange));
+            result = malloc(sizeof(TCC_gsheet_Range));
             result->rows = cJSON_GetArraySize(values);
             result->cols = 0;
             result->data = NULL;
@@ -351,7 +326,7 @@ SheetRange* TCC_gsheet_ReadRange(GSheetClient* client, const char* range) {
  * @param payload Передаваемые данные в запросе
  * @return char* - Тело ответа на запрос
  */
-char* TCC_gsheet_SendRequest(GSheetClient* client, char* url, char* payload) {
+char* TCC_gsheet_SendRequest(TCC_gsheet_Client* client, char* url, char* payload) {
     CURL* curl = curl_easy_init();
     if (!curl) {
         fprintf(stderr, "Failed to initialize CURL\n");
@@ -421,16 +396,16 @@ char* TCC_gsheet_SendRequest(GSheetClient* client, char* url, char* payload) {
 typedef struct {
     int sheet_id;
     char* title;
-} SheetInfo;
+} TCC_gsheet_Info;
 
 /**
  * Получает информацию о листе (id и название)
  * 
  * @param client Указатель на клиент GSheets
  * @param count Количество листов в таблице
- * @return SheetInfo* - структуру данных с указанными параметрами
+ * @return TCC_gsheet_Info* - структуру данных с указанными параметрами
  */
-SheetInfo* TCC_gsheet_GetSheetInfo(GSheetClient* client, int* count) {
+TCC_gsheet_Info* TCC_gsheet_GetSheetInfo(TCC_gsheet_Client* client, int* count) {
     if (!client || !count) return NULL;
 
     char url[256];
@@ -453,7 +428,7 @@ SheetInfo* TCC_gsheet_GetSheetInfo(GSheetClient* client, int* count) {
         return NULL;
     }
 
-    SheetInfo* sheets = NULL;
+    TCC_gsheet_Info* sheets = NULL;
     *count = 0;
 
     if (cJSON_HasObjectItem(root, "sheets")) {
@@ -461,7 +436,7 @@ SheetInfo* TCC_gsheet_GetSheetInfo(GSheetClient* client, int* count) {
         cJSON* sheets_array = cJSON_GetObjectItem(root, "sheets");
         int num_sheets = cJSON_GetArraySize(sheets_array);
         
-        sheets = malloc(sizeof(SheetInfo) * num_sheets);
+        sheets = malloc(sizeof(TCC_gsheet_Info) * num_sheets);
         
         for (int i = 0; i < num_sheets; i++) {
             cJSON* sheet = cJSON_GetArrayItem(sheets_array, i);
@@ -490,7 +465,7 @@ SheetInfo* TCC_gsheet_GetSheetInfo(GSheetClient* client, int* count) {
  * @param cols Количество колонок
  * @return TRUE в случае успеха
  */
-bool TCC_gsheet_WriteRange(GSheetClient* client, const char* range, 
+bool TCC_gsheet_WriteRange(TCC_gsheet_Client* client, const char* range, 
                           char*** data, int rows, int cols) {
 
     if (!client || !range || !data || rows < 1 || cols < 1) {
@@ -562,12 +537,12 @@ bool TCC_gsheet_WriteRange(GSheetClient* client, const char* range,
 /**
  * ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ
  * 
- * Очищает память типа SheetInfo
+ * Очищает память типа TCC_gsheet_Info
  * 
  * @param client Указатель на клиент GSheets
  * @param count Количество листов
  */
-void TCC_gsheet_FreeSheetInfo(SheetInfo* sheets, int count) {
+void TCC_gsheet_FreeSheetInfo(TCC_gsheet_Info* sheets, int count) {
     for (int i = 0; i < count; i++) {
         free(sheets[i].title);
     }
@@ -583,7 +558,7 @@ void TCC_gsheet_FreeSheetInfo(SheetInfo* sheets, int count) {
  * @param range Диапазон в формате "Лист!A1:B2"
  * @return TRUE в случае успеха
  */
-bool TCC_gsheet_ClearRange(GSheetClient* client, const char* range) {
+bool TCC_gsheet_ClearRange(TCC_gsheet_Client* client, const char* range) {
     if (!client || !range) return FALSE;
 
     char url[256];
@@ -611,31 +586,15 @@ bool TCC_gsheet_ClearRange(GSheetClient* client, const char* range) {
     return result;
 }
 
-// 11. Удаляем лист
-void gsheet_delete_sheet(GSheetClient* client, int sheet_id) {
-    cJSON* root = cJSON_CreateObject();
-    cJSON* requests = cJSON_AddArrayToObject(root, "requests");
-
-    cJSON* delete_sheet = cJSON_CreateObject();
-    cJSON_AddItemToObject(delete_sheet, "deleteSheet",
-        cJSON_CreateObject());
-    cJSON_AddNumberToObject(cJSON_GetObjectItem(delete_sheet, "deleteSheet"), "sheetId", sheet_id);
-
-    cJSON_AddItemToArray(requests, delete_sheet);
-
-    // Отправка batchUpdate
-    // ... (реализация аналогично TCC_gsheet_WriteRange)
-}
-
 /**
  * Читает конкретную указанную ячейку в таблице
  * 
  * @param client Указатель на клиент GSheets
  * @param row Строка
  * @param col Столбец
- * @return SheetRange* Полученные данные из ячейки
+ * @return TCC_gsheet_Range* Полученные данные из ячейки
  */
-SheetRange* TCC_gsheet(GSheetClient* client, int row, int col) {
+TCC_gsheet_Range* TCC_gsheet(TCC_gsheet_Client* client, int row, int col) {
     char range[32];
     snprintf(range, sizeof(range), "R%dC%d", row, col);
     return TCC_gsheet_ReadRange(client, range);
@@ -649,8 +608,8 @@ SheetRange* TCC_gsheet(GSheetClient* client, int row, int col) {
  * @param filename Путь к файлу для сохранения
  * @return TRUE При успешном результате
  */
-bool TCC_gsheetExportToFile(GSheetClient* client, const char* range, const char* filename) {
-    SheetRange* data = TCC_gsheet_ReadRange(client, range);
+bool TCC_gsheet_ExportToFile(TCC_gsheet_Client* client, const char* range, const char* filename) {
+    TCC_gsheet_Range* data = TCC_gsheet_ReadRange(client, range);
 
     if (!data) {
         printf("No fetch data!\n");
@@ -669,10 +628,10 @@ bool TCC_gsheetExportToFile(GSheetClient* client, const char* range, const char*
 ////////////TESTS///////////////
 
 // 1. Тест инициализации Клиента
-int TCC_test_GsheetInit() {
+int TCC_gsheet_TestInit() {
     const char* access_token = ".";
     const char* spreadsheet_id = "-";
-    GSheetClient* client = TCC_gsheet_Init(access_token, spreadsheet_id);
+    TCC_gsheet_Client* client = TCC_gsheet_Init(access_token, spreadsheet_id);
     
     if (!client) {
         fprintf(stderr, "Cannot init client\n");
@@ -684,13 +643,13 @@ int TCC_test_GsheetInit() {
 }
 
 // 2. Тест чтения из таблицы
-int TCC_test_GsheetReadRange() {
+int TCC_gsheet_TestReadRange() {
     const char* access_token = ".";
     const char* spreadsheet_id = "-";
-    GSheetClient* client = TCC_gsheet_Init(access_token, spreadsheet_id);
+    TCC_gsheet_Client* client = TCC_gsheet_Init(access_token, spreadsheet_id);
 
     const char* range = "Sheet1!A1:E1";
-    SheetRange* data = TCC_gsheet_ReadRange(client, range);
+    TCC_gsheet_Range* data = TCC_gsheet_ReadRange(client, range);
 
     if (!data) {
         fprintf(stderr, "Cannot read data from gsheet\n");
@@ -702,10 +661,10 @@ int TCC_test_GsheetReadRange() {
 }
 
 // 3. Тест очистки диапазона
-int TCC_test_GsheetClearRange() {
+int TCC_gsheet_TestClearRange() {
     const char* access_token = "";
     const char* spreadsheet_id = "";
-    GSheetClient* client = TCC_gsheet_Init(access_token, spreadsheet_id);
+    TCC_gsheet_Client* client = TCC_gsheet_Init(access_token, spreadsheet_id);
 
     bool success = TCC_gsheet_ClearRange(client, "Sheet1!A2:F2");
 
@@ -721,7 +680,7 @@ int main() {
     //Инициализация клиента
     const char* access_token = "token";
     const char* spreadsheet_id = "";
-    GSheetClient* client = TCC_gsheet_Init(access_token, spreadsheet_id);
+    TCC_gsheet_Client* client = TCC_gsheet_Init(access_token, spreadsheet_id);
     
     if (!client) {
         fprintf(stderr, "Cannot init client\n");
