@@ -7,7 +7,7 @@
 
 #include <TCC/bank/TCC_banks.h>
 
-const TCC_bank_api* TCC_sber_InitApi();
+const TCC_bank_Api* TCC_sber_InitApi();
 
 void TCC_sber_CleanupApi();
 

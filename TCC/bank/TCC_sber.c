@@ -8,26 +8,26 @@
 #include <string.h>
 
 typedef struct {
-    TCC_bank_transaction* transactions;
-    TCC_loan_interest_rate* rates;
-    TCC_card_credit* credits;
-} TCC_sber_cache;
+    TCC_bank_Transaction* transactions;
+    TCC_loan_interest_Rate* rates;
+    TCC_card_Credit* credits;
+}  TCC_sber_Cache;
 
-static TCC_sber_cache s_cache = {0};
+static  TCC_sber_Cache s_cache = {0};
 
 static void TCC_demo_data_Init() {
-    static TCC_bank_transaction sber_transactions[] = {
+    static TCC_bank_Transaction sber_transactions[] = {
         {.date = 1672531200, .amount = 150000.0, .currency = "RUB", .type = "salary", .status = "completed"},
         {.date = 1675209600, .amount = 5000.0, .currency = "USD", .type = "bonus", .status = "completed"},
         {.date = 1677628800, .amount = 30000.0, .currency = "RUB", .type = "transfer", .status = "pending"}
     };
 
-    static TCC_loan_interest_rate sber_rates[] = {
+    static TCC_loan_interest_Rate sber_rates[] = {
         {.loan_type = "mortgage", .interest_rate = 7.8, .last_update = 1672531200},
         {.loan_type = "car", .interest_rate = 12.5, .last_update = 1675209600}
     };
 
-    static TCC_card_credit sber_credits[] = {
+    static TCC_card_Credit sber_credits[] = {
         {.date = 1672531200, .amount = 150000.0, .source = "employer", .description = "Salary January"},
         {.date = 1675209600, .amount = 5000.0, .source = "bonus", .description = "Q4 Performance Bonus"}
     };
@@ -42,7 +42,7 @@ static void TCC_demo_data_Init() {
     memcpy(s_cache.credits, sber_credits, sizeof(sber_credits));
 }
 
-static TCC_bank_api_status TCC_sber_GetTransactions(const char* employee_id, TCC_bank_transaction** transactions, size_t* count) {
+static TCC_bank_api_Status TCC_sber_GetTransactions(const char* employee_id, TCC_bank_Transaction** transactions, size_t* count) {
     if(strncmp(employee_id, "sber_", 5) != 0) {
         return TCC_bank_api_error_auth;
     }
@@ -52,7 +52,7 @@ static TCC_bank_api_status TCC_sber_GetTransactions(const char* employee_id, TCC
     return TCC_bank_api_ok;
 }
 
-static TCC_bank_api_status TCC_sber_GetInn(const char* employee_id, char* inn, size_t buffer_size) {
+static TCC_bank_api_Status TCC_sber_GetInn(const char* employee_id, char* inn, size_t buffer_size) {
     if(strncmp(employee_id, "sber_", 5) != 0) {
         return TCC_bank_api_error_auth;
     }
@@ -65,7 +65,7 @@ static TCC_bank_api_status TCC_sber_GetInn(const char* employee_id, char* inn, s
     return TCC_bank_api_ok;
 }
 
-static TCC_bank_api_status TCC_sber_GetInterestRates(const char* employee_id, TCC_loan_interest_rate** rates, size_t* count) {
+static TCC_bank_api_Status TCC_sber_GetInterestRates(const char* employee_id, TCC_loan_interest_Rate** rates, size_t* count) {
     if(strncmp(employee_id, "sber_", 5) != 0) {
         return TCC_bank_api_error_auth;
     }
@@ -75,7 +75,7 @@ static TCC_bank_api_status TCC_sber_GetInterestRates(const char* employee_id, TC
     return TCC_bank_api_ok;
 }
 
-static TCC_bank_api_status TCC_sber_GetCardCredits(const char* employee_id, TCC_card_credit** credits, size_t* count) {
+static TCC_bank_api_Status TCC_sber_GetCardCredits(const char* employee_id, TCC_card_Credit** credits, size_t* count) {
     if(strncmp(employee_id, "sber_", 5) != 0) {
         return TCC_bank_api_error_auth;
     }
@@ -85,14 +85,14 @@ static TCC_bank_api_status TCC_sber_GetCardCredits(const char* employee_id, TCC_
     return TCC_bank_api_ok;
 }
 
-static const TCC_bank_api sber_api = {
+static const TCC_bank_Api sber_api = {
     .get_transactions = TCC_sber_GetTransactions,
     .get_inn = TCC_sber_GetInn,
     .get_interest_rates = TCC_sber_GetInterestRates,
     .get_card_credits = TCC_sber_GetCardCredits
 };
 
-const TCC_bank_api* TCC_sber_InitApi() {
+const TCC_bank_Api* TCC_sber_InitApi() {
     TCC_demo_data_Init();
     return &sber_api;
 }

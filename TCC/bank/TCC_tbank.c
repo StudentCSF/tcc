@@ -9,29 +9,29 @@
 #include <time.h>
 
 typedef struct {
-    TCC_bank_transaction* transactions;
-    TCC_loan_interest_rate* rates;
-    TCC_card_credit* credits;
-    TCC_tbank_auth_context auth_ctx;
-} TCC_tbank_cache;
+    TCC_bank_Transaction* transactions;
+    TCC_loan_interest_Rate* rates;
+    TCC_card_Credit* credits;
+     TCC_tbank_auth_Context auth_ctx;
+}  TCC_tbank_Cache;
 
-static TCC_tbank_cache t_cache = {0};
+static  TCC_tbank_Cache t_cache = {0};
 
-static void TCC_demo_data_Init(const TCC_tbank_auth_context* auth) {
-    memcpy(&t_cache.auth_ctx, auth, sizeof(TCC_tbank_auth_context));
+static void TCC_demo_data_Init(const  TCC_tbank_auth_Context* auth) {
+    memcpy(&t_cache.auth_ctx, auth, sizeof( TCC_tbank_auth_Context));
 
-    static TCC_bank_transaction tbank_transactions[] = {
+    static TCC_bank_Transaction tbank_transactions[] = {
         {.date = 1672531200, .amount = 75000.0, .currency = "RUB", .type = "salary", .status = "completed"},
         {.date = 1675209600, .amount = 150.5, .currency = "USD", .type = "cashback", .status = "completed"},
         {.date = 1677628800, .amount = 10000.0, .currency = "RUB", .type = "investment", .status = "pending"}
     };
     
-    static TCC_loan_interest_rate tbank_rates[] = {
+    static TCC_loan_interest_Rate tbank_rates[] = {
         {.loan_type = "consumer", .interest_rate = 8.9, .last_update = 1672531200},
         {.loan_type = "business", .interest_rate = 6.5, .last_update = 1675209600}
     };
     
-    static TCC_card_credit tbank_credits[] = {
+    static TCC_card_Credit tbank_credits[] = {
         {.date = 1672531200, .amount = 75000.0, .source = "employer", .description = "Monthly salary"},
         {.date = 1675209600, .amount = 150.5, .source = "cashback", .description = "Quarterly cashback"}
     };
@@ -46,7 +46,7 @@ static void TCC_demo_data_Init(const TCC_tbank_auth_context* auth) {
     memcpy(t_cache.credits, tbank_credits, sizeof(tbank_credits));
 }
 
-static TCC_bank_api_status TCC_tbank_GetTransactions(const char* employee_id, TCC_bank_transaction** transactions, size_t* count) {
+static TCC_bank_api_Status TCC_tbank_GetTransactions(const char* employee_id, TCC_bank_Transaction** transactions, size_t* count) {
     if(strncmp(employee_id, "tbank_", 6) != 0) {
         return TCC_bank_api_error_auth;
     }
@@ -56,7 +56,7 @@ static TCC_bank_api_status TCC_tbank_GetTransactions(const char* employee_id, TC
     return TCC_bank_api_ok;
 }
 
-static TCC_bank_api_status TCC_tbank_GetInn(const char* employee_id, char* inn, size_t buffer_size) {
+static TCC_bank_api_Status TCC_tbank_GetInn(const char* employee_id, char* inn, size_t buffer_size) {
     if(strncmp(employee_id, "tbank_", 6) != 0) {
         return TCC_bank_api_error_auth;
     }
@@ -69,7 +69,7 @@ static TCC_bank_api_status TCC_tbank_GetInn(const char* employee_id, char* inn, 
     return TCC_bank_api_ok;
 }
 
-static TCC_bank_api_status TCC_tbank_GetInterestRates(const char* employee_id, TCC_loan_interest_rate** rates, size_t* count) {
+static TCC_bank_api_Status TCC_tbank_GetInterestRates(const char* employee_id, TCC_loan_interest_Rate** rates, size_t* count) {
     if(strncmp(employee_id, "tbank_", 6) != 0) {
         return TCC_bank_api_error_auth;
     }
@@ -79,7 +79,7 @@ static TCC_bank_api_status TCC_tbank_GetInterestRates(const char* employee_id, T
     return TCC_bank_api_ok;
 }
 
-static TCC_bank_api_status TCC_tbank_GetCardCredits(const char* employee_id, TCC_card_credit** credits, size_t* count) {
+static TCC_bank_api_Status TCC_tbank_GetCardCredits(const char* employee_id, TCC_card_Credit** credits, size_t* count) {
     if(strncmp(employee_id, "tbank_", 6) != 0) {
         return TCC_bank_api_error_auth;
     }
@@ -89,14 +89,14 @@ static TCC_bank_api_status TCC_tbank_GetCardCredits(const char* employee_id, TCC
     return TCC_bank_api_ok;
 }
 
-static const TCC_bank_api tbank_api = {
+static const TCC_bank_Api tbank_api = {
     .get_transactions = TCC_tbank_GetTransactions,
     .get_inn = TCC_tbank_GetInn,
     .get_interest_rates = TCC_tbank_GetInterestRates,
     .get_card_credits = TCC_tbank_GetCardCredits
 };
 
-const TCC_bank_api* TCC_tbank_InitApi(const TCC_tbank_auth_context* auth) {
+const TCC_bank_Api* TCC_tbank_InitApi(const  TCC_tbank_auth_Context* auth) {
     if(strncmp(auth->digital_signature, "TBS-", 4) != 0) {
         return NULL;
     }

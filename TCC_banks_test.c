@@ -6,14 +6,14 @@
 #include <stdlib.h>
 
 static struct {
-    const TCC_bank_api* sber;
-    const TCC_bank_api* tbank;
-    const TCC_bank_api* raif;
+    const TCC_bank_Api* sber;
+    const TCC_bank_Api* tbank;
+    const TCC_bank_Api* raif;
 } test_ctx;
 
 static void setup(void) {
     test_ctx.sber = TCC_sber_InitApi();
-    test_ctx.tbank = TCC_tbank_InitApi(&(TCC_tbank_auth_context){.digital_signature = "TBS-TEST"});
+    test_ctx.tbank = TCC_tbank_InitApi(&( TCC_tbank_auth_Context){.digital_signature = "TBS-TEST"});
     test_ctx.raif = TCC_raiffeisen_InitApi("RAIF-TEST");
     
     TCC_RegisterBank("sber", test_ctx.sber, NULL);
@@ -26,19 +26,19 @@ static void teardown(void) {
 }
 
 START_TEST(test_register_bank) {
-    TCC_bank_api_status status = TCC_RegisterBank("test_bank", test_ctx.sber, NULL);
+    TCC_bank_api_Status status = TCC_RegisterBank("test_bank", test_ctx.sber, NULL);
     ck_assert_int_eq(status, TCC_bank_api_ok);
 }
 END_TEST
 
 START_TEST(test_unregister_bank) {
-    TCC_bank_api_status status = TCC_UnregisterBank("sber");
+    TCC_bank_api_Status status = TCC_UnregisterBank("sber");
     ck_assert_int_eq(status, TCC_bank_api_ok);
 }
 END_TEST
 
 START_TEST(test_set_active_bank) {
-    TCC_bank_api_status status = TCC_SetActiveBank("tbank");
+    TCC_bank_api_Status status = TCC_SetActiveBank("tbank");
     ck_assert_int_eq(status, TCC_bank_api_ok);
 }
 END_TEST
@@ -52,10 +52,10 @@ END_TEST
 
 START_TEST(test_get_transactions) {
     TCC_SetActiveBank("sber");
-    TCC_bank_transaction* transactions;
+    TCC_bank_Transaction* transactions;
     size_t count;
     
-    TCC_bank_api_status status = TCC_GetTransactions("sber_123", &transactions, &count);
+    TCC_bank_api_Status status = TCC_GetTransactions("sber_123", &transactions, &count);
     ck_assert_int_eq(status, TCC_bank_api_ok);
     ck_assert_uint_eq(count, 3);
     ck_assert_str_eq(transactions[0].currency, "RUB");
@@ -66,7 +66,7 @@ START_TEST(test_get_inn) {
     TCC_SetActiveBank("tbank");
     char inn[13];
     
-    TCC_bank_api_status status = TCC_GetInn("tbank_456", inn, sizeof(inn));
+    TCC_bank_api_Status status = TCC_GetInn("tbank_456", inn, sizeof(inn));
     ck_assert_int_eq(status, TCC_bank_api_ok);
     ck_assert_str_eq(inn, "7710140679");
 }
@@ -74,10 +74,10 @@ END_TEST
 
 START_TEST(test_get_interest_rates) {
     TCC_SetActiveBank("raif");
-    TCC_loan_interest_rate* rates;
+    TCC_loan_interest_Rate* rates;
     size_t count;
     
-    TCC_bank_api_status status = TCC_GetInterestRates("raif_789", &rates, &count);
+    TCC_bank_api_Status status = TCC_GetInterestRates("raif_789", &rates, &count);
     ck_assert_int_eq(status, TCC_bank_api_ok);
     ck_assert_uint_eq(count, 2);
     ck_assert_str_eq(rates[0].loan_type, "mortgage");
@@ -86,10 +86,10 @@ END_TEST
 
 START_TEST(test_get_card_credits) {
     TCC_SetActiveBank("sber");
-    TCC_card_credit* credits;
+    TCC_card_Credit* credits;
     size_t count;
     
-    TCC_bank_api_status status = TCC_GetCardCredits("sber_123", &credits, &count);
+    TCC_bank_api_Status status = TCC_GetCardCredits("sber_123", &credits, &count);
     ck_assert_int_eq(status, TCC_bank_api_ok);
     ck_assert_uint_eq(count, 2);
     ck_assert_str_eq(credits[0].source, "employer");

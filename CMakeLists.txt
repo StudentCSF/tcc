@@ -21,8 +21,10 @@ add_executable(${AppName}
         TCC/core/TCC_STS.c
         TCC/infra/TCC_money_load.c
         #TCC/core/TCC_compute_shader.c
+        TCC/client/*.c
 
-        main.c)
+        main.c
+)
 
 
 target_include_directories(${AppName} PRIVATE ${CMAKE_SOURCE_DIR})
@@ -56,3 +58,29 @@ target_link_libraries(${AppName} PRIVATE PostgreSQL::PostgreSQL)
 # После find_package(PostgreSQL REQUIRED)
 find_package(Threads REQUIRED)
 target_link_libraries(${AppName} PRIVATE Threads::Threads)
+
+option(ENABLE_TESTS "Build tests" OFF)
+# option(ENABLE_TESTS "Build tests" ON)
+
+if (ENABLE_TESTS)
+    # find_package(Check REQUIRED)
+    
+    file(GLOB TEST_SOURCES "${CMAKE_SOURCE_DIR}/TCC_banks_test.c")
+    
+    add_executable(${AppName}-tests ${TEST_SOURCES} ${MAIN_SOURCES})
+    
+    target_include_directories(${AppName}-tests PRIVATE
+        ${CMAKE_SOURCE_DIR}
+        ${CMAKE_SOURCE_DIR}/TCC/client/headers
+        ${Check_INCLUDE_DIRS}
+    )
+    
+    target_link_libraries(${AppName}-tests PRIVATE
+        Check::Check
+        SDL2
+        ${OPENGL_LIBRARIES}
+    )
+    
+    enable_testing()
+    add_test(NAME ${AppName}-tests COMMAND ${AppName}-tests)
+endif()

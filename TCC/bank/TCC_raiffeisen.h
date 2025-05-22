@@ -10,8 +10,8 @@
 typedef struct {
     char branch_code[10];
     time_t contract_date;
-} TCC_raiffeisen_employee_info;
+}  TCC_raiffeisen_employee_Info;
 
-TCC_bank_api_status TCC_raiffeisen_GetEmployeeInfo(const char* employee_id, TCC_raiffeisen_employee_info* info);
+TCC_bank_api_Status TCC_raiffeisen_GetEmployeeInfo(const char* employee_id,  TCC_raiffeisen_employee_Info* info);
 
 #endif //TCC_RAIFFAIZEN_H
