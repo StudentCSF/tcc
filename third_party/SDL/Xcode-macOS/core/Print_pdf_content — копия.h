@@ -8,6 +8,6 @@
 #ifndef PDF_UTILS_H
 #define PDF_UTILS_H
 
-void Print_pdf_content(const char* filePath);
+void TCC_PDF_PrintPdfContent(const char* filePath);
 
 #endif // PDF_UTILS_H

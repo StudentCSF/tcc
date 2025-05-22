@@ -13,9 +13,9 @@
 extern "C" {
 #endif
 
-void My_draw_content(CGContextRef context, User userInfo);
+void TCC_PDF_MyDrawContent(CGContextRef context, User userInfo);
 
-void Create_pdf_file(CGRect pageRect, const char *filename, User userInfo);
+void TCC_PDF_CreatePdfFile(CGRect pageRect, const char *filename, User userInfo);
 
 // MARK: - Basic PDF Operations
 

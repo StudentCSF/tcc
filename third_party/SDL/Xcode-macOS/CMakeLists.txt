@@ -17,15 +17,15 @@ include_directories(
 
 add_executable(exporter-tcc
     main.c
-    User.c
-    core/Check_fonts_on_page.c
-    core/Create_pdf_file.c
+    TCC_user_User.c
+    core/TCC_PDF_CheckFontsOnPage.c
+    core/TCC_PDF_CreatePdfFile.c
     
-    core/My_display_pdf_page.c
-    core/My_get_pdf_document_ref.c
-    core/Print_pdf_content.c
+    core/TCC_PDF_MyDisplayPdfPage.c
+    core/TCC_PDF_MyGetPdfDocumentRef.c
+    core/TCC_PDF_PrintPdfContent.c
    
-    tools/Make_png_image_from_pdf.c
+    tools/TCC_PDF_MakePngImageFromPdf.c
 )
 
 target_link_libraries(exporter-tcc
