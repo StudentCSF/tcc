@@ -1,8 +1,8 @@
-# Install script for directory: D:/Study/3sem_m/pams/app/tcc2
+# Install script for directory: C:/Users/MateBook/Desktop/c_project_gsheets-main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files/TCC")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/TCC_google_sheets")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,20 +32,15 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("D:/Study/3sem_m/pams/app/tcc2/build/third_party/SDL/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("D:/Study/3sem_m/pams/app/tcc2/build/third_party/GLEW/build/cmake/cmake_install.cmake")
+# Set path to fallback-tool for dependency-resolution.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "D:/ProgTools/mingw32/bin/objdump.exe")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "D:/Study/3sem_m/pams/app/tcc2/build/install_local_manifest.txt"
+  file(WRITE "C:/Users/MateBook/Desktop/c_project_gsheets-main/build/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -61,6 +56,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "D:/Study/3sem_m/pams/app/tcc2/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "C:/Users/MateBook/Desktop/c_project_gsheets-main/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

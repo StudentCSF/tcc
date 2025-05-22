@@ -1,58 +1,62 @@
-cmake_minimum_required(VERSION 3.25.0)
+cmake_minimum_required(VERSION 3.25)
+project(TCC_google_sheets C)
 
-project(TCC C)
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
 
-set(CMAKE_C_STANDARD 17)
-set(CMAKE_C_STANDARD_REQUIRED TRUE)
-
-set(AppName TCC)
-
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/app)
-
-
-if (MSVC)
-    add_compile_options(/O2 /experimental:c11atomics)
-endif ()
-
-find_package(OpenGL REQUIRED)
-
-add_executable(${AppName}
-        TCC/core/TCC_money.c
-        TCC/core/TCC_STS.c
-        TCC/infra/TCC_money_load.c
-        #TCC/core/TCC_compute_shader.c
-
-        main.c)
-
-
-target_include_directories(${AppName} PRIVATE ${CMAKE_SOURCE_DIR})
-
-# # Для таймера и/или ui раскомментировать
-add_subdirectory(third_party/SDL)
-target_link_libraries(${AppName} PRIVATE SDL2)
-
-#add_subdirectory("third_party/GLEW/build/cmake")
-target_include_directories(${AppName} PRIVATE "third_party/GLEW/include")
-#target_link_libraries(${AppName} PRIVATE GLEW)
-
-# Найти PostgreSQL
-find_package(PostgreSQL REQUIRED)
-
-# Добавить include директории
-include_directories(${PostgreSQL_INCLUDE_DIRS})
-
-include_directories(${CMAKE_SOURCE_DIR})
-
-include_directories(${CMAKE_SOURCE_DIR}/TCC)
-
-# Добавить исходные файлы базы данных
-set(DB_SOURCES
-        DataBase/postgres/tcc_db.c
+# Создаем библиотеку из исходников
+add_library(TCC_google_sheets STATIC
+    TCC_google_sheets.c
 )
 
-target_sources(${AppName} PRIVATE ${DB_SOURCES})
-target_link_libraries(${AppName} PRIVATE PostgreSQL::PostgreSQL)
+# Указываем пути к cURL
+set(CURL_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/third_party/curl")
+set(CURL_INCLUDE_DIR "${CURL_ROOT}/include")
+set(CURL_LIBRARY "${CURL_ROOT}/bin/libcurl.dll")
 
-# После find_package(PostgreSQL REQUIRED)
-find_package(Threads REQUIRED)
-target_link_libraries(${AppName} PRIVATE Threads::Threads)
+# Указываем пути к cjson
+set(CJSON_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/third_party/cJSON-master")
+
+# Указываем пути к собственной библиотеке (Gsheet)
+set(GSHEET_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/Gsheet")
+
+
+# Проверка существования файлов (CURL)
+if(NOT EXISTS "${CURL_INCLUDE_DIR}/curl/curl.h")
+    message(FATAL_ERROR "Файл curl.h не найден! Проверьте: ${CURL_INCLUDE_DIR}/curl/curl.h")
+endif()
+
+if(NOT EXISTS "${CURL_LIBRARY}")
+    message(FATAL_ERROR "Библиотека не найдена: ${CURL_LIBRARY}")
+endif()
+
+
+
+# Проверка существования файлов (cjson)
+if(NOT EXISTS "${CJSON_ROOT}/cJSON.h")
+    message(FATAL_ERROR "Файл cJSON.h не найден! ")
+endif()
+
+# Подключение заголовков
+target_include_directories(TCC_google_sheets PRIVATE 
+    ${CURL_INCLUDE_DIR}
+    ${CJSON_ROOT}  
+    ${GSHEET_ROOT} 
+)
+
+# Линковка библиотеки
+target_link_libraries(TCC_google_sheets PRIVATE 
+    ${CURL_LIBRARY}
+    ${CJSON_LIBRARY}
+)
+
+# Для Windows
+if(WIN32)
+    target_link_libraries(TCC_google_sheets PRIVATE
+        wldap32
+        ws2_32
+        crypt32
+        advapi32
+    )
+    target_compile_definitions(TCC_google_sheets PRIVATE -D_WIN32)
+endif()
