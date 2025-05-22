@@ -7,9 +7,6 @@
 
 #include <stdio.h>
 #include <TCC_user_User.h>
-//MARK: – указатели
-//TODO: -  убрать галочки добавить cmake
-//TODO: -  именования добавить
 #include <TCC_PDF_CreatePdfFile.h>
 #include <TCC_PDF_MyDisplayPdfPage.h>
 #include <TCC_PDF_PrintPdfContent.h>
@@ -53,7 +50,12 @@ void TCC_PDF_PerformPdf(void) {
     }
     
     CGPDFDocumentRelease(doc);
-    // perform 
+    TCC_PDF_ExtractPdfMetaData(filename);
+    TCC_PDF_PrintPdfContent(filename);
+    TCC_PDF_CheckPdfLayers(filename);
+    TCC_PDF_CheckPdfVersion(filename);
+    TCC_PDF_VerifyPdfIntegrity(filename);
+    TCC_PDF_DuplicatePdfFile(filename);
 }
 
 int main(int argc, const char * argv[]) {
