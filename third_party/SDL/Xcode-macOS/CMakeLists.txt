@@ -21,8 +21,8 @@ add_executable(exporter-tcc
     core/TCC_PDF_CheckFontsOnPage.c
     core/TCC_PDF_CreatePdfFile.c
     
-    core/TCC_PDF_MyDisplayPdfPage.c
-    core/TCC_PDF_MyGetPdfDocumentRef.c
+    core/TCC_PDF_DisplayPdfPage.c
+    core/TCC_PDF_GetPdfDocumentRef.c
     core/TCC_PDF_PrintPdfContent.c
    
     tools/TCC_PDF_MakePngImageFromPdf.c

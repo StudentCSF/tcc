@@ -19,6 +19,6 @@
  
  @note Вызывающая сторона должна освободить ресурсы через CGPDFDocumentRelease().
 */
-CGPDFDocumentRef TCC_PDF_MyGetPdfDocumentRef(const char *filename);
+CGPDFDocumentRef TCC_PDF_GetPdfDocumentRef(const char *filename);
 
 #endif // MY_PDF_UTILS_H

@@ -8,9 +8,9 @@
 #include <CoreGraphics/CoreGraphics.h>
 #include <stdio.h>
 #include <TCC_PDF_CreatePdfFile.h>
-#include <TCC_PDF_MyDisplayPdfPage.h>
+#include <TCC_PDF_DisplayPdfPage.h>
 #include <TCC_PDF_PrintPdfContent.h>
-#include <TCC_PDF_MyGetPdfDocumentRef.h>
+#include <TCC_PDF_GetPdfDocumentRef.h>
 #include <TCC_PDF_CheckFontsOnPage.h>
 #include <CoreGraphics/CoreGraphics.h>
 #include <string.h>

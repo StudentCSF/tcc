@@ -85,46 +85,46 @@ void TCC_PDF_MyDrawContent(CGContextRef context, TCC_user_User userInfo) {
     
     // Username
     currentY = TCC_PDF_DrawTextField(context, currentY, bodyAttrs,
-        CFSTR("Username"), TCC_PDF_CreateCfStringFromCstring(userInfo.TCC_kUsername));
+        CFSTR("Username"), TCC_PDF_CreateCfStringFromCstring(userInfo.username));
     
     // Email
     currentY = TCC_PDF_DrawTextField(context, currentY, bodyAttrs,
-        CFSTR("Email"), TCC_PDF_CreateCfStringFromCstring(userInfo.TCC_kEmail));
+        CFSTR("Email"), TCC_PDF_CreateCfStringFromCstring(userInfo.email));
     
     // Age
-    snprintf(buffer, sizeof(buffer), "%d years", userInfo.TCC_kAge);
+    snprintf(buffer, sizeof(buffer), "%d years", userInfo.age);
     currentY = TCC_PDF_DrawTextField(context, currentY, bodyAttrs,
         CFSTR("Age"), TCC_PDF_CreateCfStringFromCstring(buffer));
     
     // Registration Date
     snprintf(buffer, sizeof(buffer), "%02d/%02d/%d",
-           userInfo.TCC_kRegistration_date.TCC_kDay,
-           userInfo.TCC_kRegistration_date.TCC_kMonth,
-           userInfo.TCC_kRegistration_date.TCC_kYear);
+           userInfo.registration_date.TCC_kDay,
+           userInfo.registration_date.month,
+           userInfo.registration_date.year);
     currentY = TCC_PDF_DrawTextField(context, currentY, bodyAttrs,
         CFSTR("Registration Date"), TCC_PDF_CreateCfStringFromCstring(buffer));
     
     // Status
-    const char* status = userInfo.TCC_kIs_active ? "Active" : "Inactive";
+    const char* status = userInfo.is_active ? "Active" : "Inactive";
     currentY = TCC_PDF_DrawTextField(context, currentY, bodyAttrs,
         CFSTR("Status"), TCC_PDF_CreateCfStringFromCstring(status));
     
     // Rating
-    snprintf(buffer, sizeof(buffer), "%.1f/5.0", userInfo.TCC_kRating);
+    snprintf(buffer, sizeof(buffer), "%.1f/5.0", userInfo.rating);
     currentY = TCC_PDF_DrawTextField(context, currentY, bodyAttrs,
         CFSTR("Rating"), TCC_PDF_CreateCfStringFromCstring(buffer));
     
     // Salary
-    snprintf(buffer, sizeof(buffer), "$%.2f", userInfo.TCC_kSalary);
+    snprintf(buffer, sizeof(buffer), "$%.2f", userInfo.salary);
     currentY = TCC_PDF_DrawTextField(context, currentY, bodyAttrs,
         CFSTR("Salary"), TCC_PDF_CreateCfStringFromCstring(buffer));
     
     // Gender
     const char* genderStr = "Other";
-    switch(userInfo.TCC_kGender) {
-        case     TCC_kMales: genderStr = "Male"; break;
-        case     TCC_kFemales: genderStr = "Female"; break;
-        case     TCC_kOther: genderStr = "Not Found"; break;
+    switch(userInfo.gender) {
+        case     males: genderStr = "Male"; break;
+        case     females: genderStr = "Female"; break;
+        case     other: genderStr = "Not Found"; break;
     }
     currentY = TCC_PDF_DrawTextField(context, currentY, bodyAttrs,
         CFSTR("Gender"), TCC_PDF_CreateCfStringFromCstring(genderStr));
@@ -135,15 +135,15 @@ void TCC_PDF_MyDrawContent(CGContextRef context, TCC_user_User userInfo) {
     
     // Street
     currentY = TCC_PDF_DrawTextField(context, currentY, bodyAttrs,
-        CFSTR("  Street"), TCC_PDF_CreateCfStringFromCstring(userInfo.TCC_kAddress.TCC_kStreet));
+        CFSTR("  Street"), TCC_PDF_CreateCfStringFromCstring(userInfo.address.street));
     
     // City
     currentY = TCC_PDF_DrawTextField(context, currentY, bodyAttrs,
-        CFSTR("  City"), TCC_PDF_CreateCfStringFromCstring(userInfo.TCC_kAddress.TCC_kCity));
+        CFSTR("  City"), TCC_PDF_CreateCfStringFromCstring(userInfo.address.city));
     
     // Postal Code
     currentY = TCC_PDF_DrawTextField(context, currentY, bodyAttrs,
-        CFSTR("  Postal Code"), TCC_PDF_CreateCfStringFromCstring(userInfo.TCC_kAddress.TCC_kPostal_code));
+        CFSTR("  Postal Code"), TCC_PDF_CreateCfStringFromCstring(userInfo.address.postal_code));
 
     CFRelease(titleAttrs);
     CFRelease(titleFont);

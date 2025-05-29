@@ -10,7 +10,7 @@
 #include <CoreGraphics/CoreGraphics.h>
 #include <CoreText/CoreText.h>
 #include <CoreFoundation/CoreFoundation.h>
-#include <TCC_PDF_MyGetPdfDocumentRef.h>
+#include <TCC_PDF_GetPdfDocumentRef.h>
 
 static void TCC_PDF_OpTJ(CGPDFScannerRef scanner, void *info) {
     CGPDFArrayRef array;
@@ -53,14 +53,13 @@ CFStringRef TCC_PDF_ExtractTextFromPdfPage(CGPDFPageRef page) {
     return result;
 }
 
-void TCC_PDF_MyDisplayPdfPage(CGContextRef myContext,
+void TCC_PDF_DisplayPdfPage(CGContextRef myContext,
                     size_t pageNumber,
-                    const char *filename)
-{
+                    const char *filename) {
     CGPDFDocumentRef document;
     CGPDFPageRef page;
  
-    document = TCC_PDF_MyGetPdfDocumentRef (filename);
+    document = TCC_PDF_GetPdfDocumentRef (filename);
     page = CGPDFDocumentGetPage (document, pageNumber);
     CGContextDrawPDFPage (myContext, page);
     CGPDFDocumentRelease (document);

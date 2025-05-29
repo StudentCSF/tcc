@@ -6,7 +6,7 @@
 //
 
 #include <ImageIO/ImageIO.h>
-#include <TCC_PDF_MyDisplayPdfPage.h>
+#include <TCC_PDF_DisplayPdfPage.h>
 
 void TCC_PDF_MakePngImageFromPdf(char *path) {
     const size_t pageNumber = 1;
@@ -23,7 +23,7 @@ void TCC_PDF_MakePngImageFromPdf(char *path) {
         kCGImageAlphaPremultipliedLast
     );
     
-    TCC_PDF_MyDisplayPdfPage(context, pageNumber, path);
+    TCC_PDF_DisplayPdfPage(context, pageNumber, path);
     
     CGImageRef image = CGBitmapContextCreateImage(context);
     CFURLRef outputURL = CFURLCreateWithFileSystemPath(

@@ -7,13 +7,12 @@
 
 #include <CoreGraphics/CoreGraphics.h>
 #include <CoreFoundation/CoreFoundation.h>
-#include <TCC_PDF_MyGetPdfDocumentRef.h>
-#include <TCC_PDF_MyDisplayPdfPage.h>
+#include <TCC_PDF_GetPdfDocumentRef.h>
+#include <TCC_PDF_DisplayPdfPage.h>
 
 void TCC_PDF_PrintPdfContent(const char* filePath) {
     CGPDFDocumentRef document;
- 
-    document = TCC_PDF_MyGetPdfDocumentRef(filePath);
+    document = TCC_PDF_GetPdfDocumentRef(filePath);
     CGPDFPageRef page = CGPDFDocumentGetPage(document, 1);
     CFStringRef extractedText = TCC_PDF_ExtractTextFromPdfPage(page);
     

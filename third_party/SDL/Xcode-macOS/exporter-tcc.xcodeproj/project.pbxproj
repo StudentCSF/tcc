@@ -9,20 +9,20 @@
 /* Begin PBXAggregateTarget section */
 		4D8EE0AD0B64B45A8183C452 /* ALL_BUILD */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = AD8A9BE07FC443A9ACE1B448 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildConfigurationList = 869C5DDE46FF4813B0C21F9A /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
 			buildPhases = (
 				6CF63DD892236372A297B141 /* Generate CMakeFiles/ALL_BUILD */,
 			);
 			dependencies = (
-				848A0629A23143ABACFA7068 /* PBXTargetDependency */,
-				D17105276654400DA2B266F4 /* PBXTargetDependency */,
+				FAE7150FDB2F4CE7BB37212E /* PBXTargetDependency */,
+				2A2A602B74624A9895619694 /* PBXTargetDependency */,
 			);
 			name = ALL_BUILD;
 			productName = ALL_BUILD;
 		};
 		AD06A6D132ACCED0EE3ECDD1 /* ZERO_CHECK */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 3F492C80EB5746DFA4C35452 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildConfigurationList = 10534103ACF348EA90CD8093 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
 			buildPhases = (
 				FEE11AB5DC738C1A3AEE4F9F /* Generate CMakeFiles/ZERO_CHECK */,
 			);
@@ -34,68 +34,68 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		0A13FA3AFB6D4DA6925F9FB4 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreGraphics.framework */ = {isa = PBXBuildFile; fileRef = D451FB0093AB457993A5CE1C /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreGraphics.framework */; };
-		0C1EFCC946C44B179FF4B4F2 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/main.c */ = {isa = PBXBuildFile; fileRef = 8EE5B448BEA344C1A28788A4 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/main.c */; };
-		167AB40A774644758DB2A221 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreFoundation.framework */ = {isa = PBXBuildFile; fileRef = AD784FF25A884F47A0C4CA38 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreFoundation.framework */; };
-		208CDF2AA6E4450BBA4DFC32 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/AppKit.framework */ = {isa = PBXBuildFile; fileRef = 11B71A76C5DE4B87B9AFF40B /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/AppKit.framework */; };
-		2CDF6F9F0E7D4BAA8AC22ECF /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreText.framework */ = {isa = PBXBuildFile; fileRef = EE45318D78DF4475838DB003 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreText.framework */; };
-		5FD204B137CC486DA50622D0 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_MyDisplayPdfPage.c */ = {isa = PBXBuildFile; fileRef = 0357A9E8E43946518C401D6A /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_MyDisplayPdfPage.c */; };
-		798FD94CEC7F468C99DDB026 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/tools/TCC_PDF_MakePngImageFromPdf.c */ = {isa = PBXBuildFile; fileRef = D6C1C6DBB0374ABC8C1E7D23 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/tools/TCC_PDF_MakePngImageFromPdf.c */; };
-		7ADB6E28CCFE427EA67F8C33 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_CheckFontsOnPage.c */ = {isa = PBXBuildFile; fileRef = A6AF8BC9D2BC442ABB09A992 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_CheckFontsOnPage.c */; };
-		B03DB59B63DA4A5A9C3E6849 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_CreatePdfFile.c */ = {isa = PBXBuildFile; fileRef = D8B974881CFC405B84883459 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_CreatePdfFile.c */; };
-		E8AFFB810875478F9067D4D8 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_PrintPdfContent.c */ = {isa = PBXBuildFile; fileRef = 34F36E3922CE440DB0840ECF /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_PrintPdfContent.c */; };
-		F1EC9F295A664A60AED20E7B /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 261A6E04DDED4CC3928B55DB /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/CMakeLists.txt */; };
-		F46937975F9E4A3384E8B4C1 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_MyGetPdfDocumentRef.c */ = {isa = PBXBuildFile; fileRef = 7145820D659B46B2891225D8 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_MyGetPdfDocumentRef.c */; };
-		FAB26FE6AE9B4FF889FFB1B8 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/TCC_user_User.c */ = {isa = PBXBuildFile; fileRef = 044844EF9A7E400B959ACF3A /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/TCC_user_User.c */; };
+		01A5B78D72504399B7B33F8A /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_CheckFontsOnPage.c */ = {isa = PBXBuildFile; fileRef = C86EE257D5934F2FB805890B /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_CheckFontsOnPage.c */; };
+		075E9A9B9F0145E58998FF4B /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 46F9F2DD053149CABA8A50E5 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/CMakeLists.txt */; };
+		345217056A5347A7B6847EB0 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_PrintPdfContent.c */ = {isa = PBXBuildFile; fileRef = C0D9D74057AF40F4946BD857 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_PrintPdfContent.c */; };
+		47CA8135CCFD4F6F87D1135B /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/TCC_user_User.c */ = {isa = PBXBuildFile; fileRef = 6E31EA46FC5C4B519A94182B /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/TCC_user_User.c */; };
+		5084563C73E34FB2BEF907F0 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/tools/TCC_PDF_MakePngImageFromPdf.c */ = {isa = PBXBuildFile; fileRef = 6F7EE8B4DD994B648DA5E6F3 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/tools/TCC_PDF_MakePngImageFromPdf.c */; };
+		5B207458AB154E54925A3091 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_CreatePdfFile.c */ = {isa = PBXBuildFile; fileRef = 784FD40AF3994810A0713ABE /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_CreatePdfFile.c */; };
+		79DFCED323F3453BAF106C93 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_GetPdfDocumentRef.c */ = {isa = PBXBuildFile; fileRef = 77EF679A0CCE4F54BA0D9DCB /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_GetPdfDocumentRef.c */; };
+		9792A52D008843E8BC80F026 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreFoundation.framework */ = {isa = PBXBuildFile; fileRef = 7DB68A8F64D74F95ACF000C7 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreFoundation.framework */; };
+		9B5FC04C7B1F4B4899269998 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_DisplayPdfPage.c */ = {isa = PBXBuildFile; fileRef = 521B4D99E0B64699A1C12C58 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_DisplayPdfPage.c */; };
+		9D12B73167E348DB87D1520C /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreText.framework */ = {isa = PBXBuildFile; fileRef = 1E42ABA36DBA4161A137238F /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreText.framework */; };
+		B05538001DA544789CD6A761 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/AppKit.framework */ = {isa = PBXBuildFile; fileRef = 897AF611D2754F4BABE7E431 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/AppKit.framework */; };
+		C52BF2B777B94A4EA04E8E82 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreGraphics.framework */ = {isa = PBXBuildFile; fileRef = A4C330D044B941DC80B9D663 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreGraphics.framework */; };
+		E96925396CD741AD91C68BFD /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/main.c */ = {isa = PBXBuildFile; fileRef = 17A29BE7B250430C873C88D5 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/main.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
-		3D5DC33FD85A48668A90A1B9 /* Debug */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Debug;
-		};
-		4F755DDFBA0445A0B3B99C0F /* RelWithDebInfo */ = {
+		5C7D48F555844F24B4CF3F88 /* RelWithDebInfo */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = RelWithDebInfo;
 		};
-		AC6BAEBE29B347B6BE07C892 /* Release */ = {
+		A10521E1E12D4D02A17FF7CD /* Debug */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
-			name = Release;
+			name = Debug;
 		};
-		D621111519AD4EE9B0E0A35A /* MinSizeRel */ = {
+		A381BF9328844A98951DC7DC /* MinSizeRel */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = MinSizeRel;
 		};
+		AF6FC3DAFD53445BA62DE240 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
 /* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
-		13534A48CB0C4B9FBF1CB61C /* PBXContainerItemProxy */ = {
+		1263AC527AEF44D19422A31E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D2066195EA8A430A99EA3258 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = AD06A6D132ACCED0EE3ECDD1;
 			remoteInfo = ZERO_CHECK;
 		};
-		24E5F03DCE4D4CDCB83412D0 /* PBXContainerItemProxy */ = {
+		7F4BCA667B814218808F1E53 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D2066195EA8A430A99EA3258 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = AD06A6D132ACCED0EE3ECDD1;
 			remoteInfo = ZERO_CHECK;
 		};
-		2615191598BC47CEA66B07E7 /* PBXContainerItemProxy */ = {
+		B0CC0BB7C8CD408EA61C5147 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D2066195EA8A430A99EA3258 /* Project object */;
 			proxyType = 1;
@@ -105,25 +105,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0357A9E8E43946518C401D6A /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_MyDisplayPdfPage.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = TCC_PDF_MyDisplayPdfPage.c; path = core/TCC_PDF_MyDisplayPdfPage.c; sourceTree = SOURCE_ROOT; };
-		044844EF9A7E400B959ACF3A /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/TCC_user_User.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = TCC_user_User.c; path = TCC_user_User.c; sourceTree = SOURCE_ROOT; };
-		11B71A76C5DE4B87B9AFF40B /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/AppKit.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
-		1643B138DC7B4CA49F212411 /* exporter-tcc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "exporter-tcc"; sourceTree = BUILT_PRODUCTS_DIR; };
-		261A6E04DDED4CC3928B55DB /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		33912F544C6D42BF8C3C7456 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		34F36E3922CE440DB0840ECF /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_PrintPdfContent.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = TCC_PDF_PrintPdfContent.c; path = core/TCC_PDF_PrintPdfContent.c; sourceTree = SOURCE_ROOT; };
-		7145820D659B46B2891225D8 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_MyGetPdfDocumentRef.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = TCC_PDF_MyGetPdfDocumentRef.c; path = core/TCC_PDF_MyGetPdfDocumentRef.c; sourceTree = SOURCE_ROOT; };
-		8EE5B448BEA344C1A28788A4 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/main.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = main.c; path = main.c; sourceTree = SOURCE_ROOT; };
-		A6AF8BC9D2BC442ABB09A992 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_CheckFontsOnPage.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = TCC_PDF_CheckFontsOnPage.c; path = core/TCC_PDF_CheckFontsOnPage.c; sourceTree = SOURCE_ROOT; };
-		AD784FF25A884F47A0C4CA38 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreFoundation.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
-		D451FB0093AB457993A5CE1C /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreGraphics.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = "<absolute>"; };
-		D6C1C6DBB0374ABC8C1E7D23 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/tools/TCC_PDF_MakePngImageFromPdf.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = TCC_PDF_MakePngImageFromPdf.c; path = tools/TCC_PDF_MakePngImageFromPdf.c; sourceTree = SOURCE_ROOT; };
-		D8B974881CFC405B84883459 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_CreatePdfFile.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = TCC_PDF_CreatePdfFile.c; path = core/TCC_PDF_CreatePdfFile.c; sourceTree = SOURCE_ROOT; };
-		EE45318D78DF4475838DB003 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreText.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = "<absolute>"; };
+		17A29BE7B250430C873C88D5 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/main.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = main.c; path = main.c; sourceTree = SOURCE_ROOT; };
+		1E42ABA36DBA4161A137238F /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreText.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = "<absolute>"; };
+		230A5F84319D40C3A13BBC4B /* exporter-tcc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "exporter-tcc"; sourceTree = BUILT_PRODUCTS_DIR; };
+		46F9F2DD053149CABA8A50E5 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		521B4D99E0B64699A1C12C58 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_DisplayPdfPage.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = TCC_PDF_DisplayPdfPage.c; path = core/TCC_PDF_DisplayPdfPage.c; sourceTree = SOURCE_ROOT; };
+		6E31EA46FC5C4B519A94182B /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/TCC_user_User.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = TCC_user_User.c; path = TCC_user_User.c; sourceTree = SOURCE_ROOT; };
+		6F7EE8B4DD994B648DA5E6F3 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/tools/TCC_PDF_MakePngImageFromPdf.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = TCC_PDF_MakePngImageFromPdf.c; path = tools/TCC_PDF_MakePngImageFromPdf.c; sourceTree = SOURCE_ROOT; };
+		77EF679A0CCE4F54BA0D9DCB /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_GetPdfDocumentRef.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = TCC_PDF_GetPdfDocumentRef.c; path = core/TCC_PDF_GetPdfDocumentRef.c; sourceTree = SOURCE_ROOT; };
+		784FD40AF3994810A0713ABE /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_CreatePdfFile.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = TCC_PDF_CreatePdfFile.c; path = core/TCC_PDF_CreatePdfFile.c; sourceTree = SOURCE_ROOT; };
+		7DB68A8F64D74F95ACF000C7 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreFoundation.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
+		897AF611D2754F4BABE7E431 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/AppKit.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		A4C330D044B941DC80B9D663 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreGraphics.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = "<absolute>"; };
+		C0D9D74057AF40F4946BD857 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_PrintPdfContent.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = TCC_PDF_PrintPdfContent.c; path = core/TCC_PDF_PrintPdfContent.c; sourceTree = SOURCE_ROOT; };
+		C86EE257D5934F2FB805890B /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_CheckFontsOnPage.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = TCC_PDF_CheckFontsOnPage.c; path = core/TCC_PDF_CheckFontsOnPage.c; sourceTree = SOURCE_ROOT; };
+		D886C40951AF4E97B0DBC62F /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7A0B4CC306C4483ABB6BA9EA /* Frameworks */ = {
+		C8E4A5EDFCA34E20AABAD62A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -133,81 +133,81 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1B5C4721A65340E2BE9CFAC9 /* Source Files */ = {
+		1DFC62E0179247A994D76F00 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				044844EF9A7E400B959ACF3A /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/TCC_user_User.c */,
-				A6AF8BC9D2BC442ABB09A992 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_CheckFontsOnPage.c */,
-				D8B974881CFC405B84883459 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_CreatePdfFile.c */,
-				0357A9E8E43946518C401D6A /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_MyDisplayPdfPage.c */,
-				7145820D659B46B2891225D8 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_MyGetPdfDocumentRef.c */,
-				34F36E3922CE440DB0840ECF /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_PrintPdfContent.c */,
-				8EE5B448BEA344C1A28788A4 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/main.c */,
-				D6C1C6DBB0374ABC8C1E7D23 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/tools/TCC_PDF_MakePngImageFromPdf.c */,
-			);
-			name = "Source Files";
-			sourceTree = "<group>";
-		};
-		28053438E95740D7B1587AFB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				AD784FF25A884F47A0C4CA38 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreFoundation.framework */,
-				D451FB0093AB457993A5CE1C /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreGraphics.framework */,
-				EE45318D78DF4475838DB003 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreText.framework */,
-				11B71A76C5DE4B87B9AFF40B /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/AppKit.framework */,
+				7DB68A8F64D74F95ACF000C7 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreFoundation.framework */,
+				A4C330D044B941DC80B9D663 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreGraphics.framework */,
+				1E42ABA36DBA4161A137238F /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/CoreText.framework */,
+				897AF611D2754F4BABE7E431 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/AppKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		666507F0B2554CDFA74DE5E8 = {
+		387FBCBDB3944441B7B62A72 /* ALL_BUILD */ = {
 			isa = PBXGroup;
 			children = (
-				68C1814D690E4F76A8D5CFCC /* exporter-tcc */,
-				BD282ADDE1E444D09E1E7333 /* ALL_BUILD */,
-				9FAE88F43585415397F91026 /* Products */,
-				28053438E95740D7B1587AFB /* Frameworks */,
-				B801A4C4335F4D8E86620C65 /* Resources */,
-			);
-			sourceTree = "<group>";
-		};
-		68C1814D690E4F76A8D5CFCC /* exporter-tcc */ = {
-			isa = PBXGroup;
-			children = (
-				1B5C4721A65340E2BE9CFAC9 /* Source Files */,
-				261A6E04DDED4CC3928B55DB /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/CMakeLists.txt */,
-			);
-			name = "exporter-tcc";
-			sourceTree = "<group>";
-		};
-		9FAE88F43585415397F91026 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1643B138DC7B4CA49F212411 /* exporter-tcc */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		B801A4C4335F4D8E86620C65 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		BD282ADDE1E444D09E1E7333 /* ALL_BUILD */ = {
-			isa = PBXGroup;
-			children = (
-				DE0E570D3B0F4EB6AF3BCDCA /* CMake Rules */,
-				33912F544C6D42BF8C3C7456 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/CMakeLists.txt */,
+				8D68AB5C879046B2AD0644B8 /* CMake Rules */,
+				D886C40951AF4E97B0DBC62F /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/CMakeLists.txt */,
 			);
 			name = ALL_BUILD;
 			sourceTree = "<group>";
 		};
-		DE0E570D3B0F4EB6AF3BCDCA /* CMake Rules */ = {
+		4843B358046C4117AB4E459E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				230A5F84319D40C3A13BBC4B /* exporter-tcc */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8D68AB5C879046B2AD0644B8 /* CMake Rules */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		9952951691804AB0ACBAD015 /* exporter-tcc */ = {
+			isa = PBXGroup;
+			children = (
+				BBC2B48B75374734AB3343FD /* Source Files */,
+				46F9F2DD053149CABA8A50E5 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/CMakeLists.txt */,
+			);
+			name = "exporter-tcc";
+			sourceTree = "<group>";
+		};
+		BBC2B48B75374734AB3343FD /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E31EA46FC5C4B519A94182B /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/TCC_user_User.c */,
+				C86EE257D5934F2FB805890B /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_CheckFontsOnPage.c */,
+				784FD40AF3994810A0713ABE /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_CreatePdfFile.c */,
+				521B4D99E0B64699A1C12C58 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_DisplayPdfPage.c */,
+				77EF679A0CCE4F54BA0D9DCB /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_GetPdfDocumentRef.c */,
+				C0D9D74057AF40F4946BD857 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_PrintPdfContent.c */,
+				17A29BE7B250430C873C88D5 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/main.c */,
+				6F7EE8B4DD994B648DA5E6F3 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/tools/TCC_PDF_MakePngImageFromPdf.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		E472B0D87A5546F6A20DCC03 = {
+			isa = PBXGroup;
+			children = (
+				9952951691804AB0ACBAD015 /* exporter-tcc */,
+				387FBCBDB3944441B7B62A72 /* ALL_BUILD */,
+				4843B358046C4117AB4E459E /* Products */,
+				1DFC62E0179247A994D76F00 /* Frameworks */,
+				F37EAF00EF4F42C9AF1B2A31 /* Resources */,
+			);
+			sourceTree = "<group>";
+		};
+		F37EAF00EF4F42C9AF1B2A31 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,19 +215,19 @@
 /* Begin PBXNativeTarget section */
 		EA252F8E9B2F0E3795773BD0 /* exporter-tcc */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6AA5BAD8A5A4494ABCF0FE6E /* Build configuration list for PBXNativeTarget "exporter-tcc" */;
+			buildConfigurationList = 25D341B4C45344259E87856C /* Build configuration list for PBXNativeTarget "exporter-tcc" */;
 			buildPhases = (
-				B68A075DFED942A0B68F971C /* Sources */,
-				7A0B4CC306C4483ABB6BA9EA /* Frameworks */,
+				A302591A2DA3485E823DAE25 /* Sources */,
+				C8E4A5EDFCA34E20AABAD62A /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				12B94AD4C0214F31AE5F0425 /* PBXTargetDependency */,
+				C6F9AB6F7F5F4A51B6E804E3 /* PBXTargetDependency */,
 			);
 			name = "exporter-tcc";
 			productName = "exporter-tcc";
-			productReference = 1643B138DC7B4CA49F212411 /* exporter-tcc */;
+			productReference = 230A5F84319D40C3A13BBC4B /* exporter-tcc */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -239,18 +239,18 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1620;
 			};
-			buildConfigurationList = 9263144C68444FBB9CB9E649 /* Build configuration list for PBXProject "exporter-tcc" */;
+			buildConfigurationList = C420412FD9D8404983374182 /* Build configuration list for PBXProject "exporter-tcc" */;
 			buildSettings = {
 			};
 			buildStyles = (
-				3D5DC33FD85A48668A90A1B9 /* Debug */,
-				AC6BAEBE29B347B6BE07C892 /* Release */,
-				D621111519AD4EE9B0E0A35A /* MinSizeRel */,
-				4F755DDFBA0445A0B3B99C0F /* RelWithDebInfo */,
+				A10521E1E12D4D02A17FF7CD /* Debug */,
+				AF6FC3DAFD53445BA62DE240 /* Release */,
+				A381BF9328844A98951DC7DC /* MinSizeRel */,
+				5C7D48F555844F24B4CF3F88 /* RelWithDebInfo */,
 			);
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 0;
-			mainGroup = 666507F0B2554CDFA74DE5E8;
+			mainGroup = E472B0D87A5546F6A20DCC03;
 			projectDirPath = .;
 			projectRoot = "";
 			targets = (
@@ -361,180 +361,43 @@ fi
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B68A075DFED942A0B68F971C /* Sources */ = {
+		A302591A2DA3485E823DAE25 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAB26FE6AE9B4FF889FFB1B8 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/TCC_user_User.c */,
-				7ADB6E28CCFE427EA67F8C33 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_CheckFontsOnPage.c */,
-				B03DB59B63DA4A5A9C3E6849 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_CreatePdfFile.c */,
-				5FD204B137CC486DA50622D0 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_MyDisplayPdfPage.c */,
-				F46937975F9E4A3384E8B4C1 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_MyGetPdfDocumentRef.c */,
-				E8AFFB810875478F9067D4D8 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_PrintPdfContent.c */,
-				0C1EFCC946C44B179FF4B4F2 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/main.c */,
-				798FD94CEC7F468C99DDB026 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/tools/TCC_PDF_MakePngImageFromPdf.c */,
+				47CA8135CCFD4F6F87D1135B /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/TCC_user_User.c */,
+				01A5B78D72504399B7B33F8A /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_CheckFontsOnPage.c */,
+				5B207458AB154E54925A3091 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_CreatePdfFile.c */,
+				9B5FC04C7B1F4B4899269998 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_DisplayPdfPage.c */,
+				79DFCED323F3453BAF106C93 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_GetPdfDocumentRef.c */,
+				345217056A5347A7B6847EB0 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core/TCC_PDF_PrintPdfContent.c */,
+				E96925396CD741AD91C68BFD /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/main.c */,
+				5084563C73E34FB2BEF907F0 /* /Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/tools/TCC_PDF_MakePngImageFromPdf.c */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		12B94AD4C0214F31AE5F0425 /* PBXTargetDependency */ = {
+		2A2A602B74624A9895619694 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AD06A6D132ACCED0EE3ECDD1 /* ZERO_CHECK */;
-			targetProxy = 13534A48CB0C4B9FBF1CB61C /* PBXContainerItemProxy */;
+			targetProxy = 7F4BCA667B814218808F1E53 /* PBXContainerItemProxy */;
 		};
-		848A0629A23143ABACFA7068 /* PBXTargetDependency */ = {
+		C6F9AB6F7F5F4A51B6E804E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD06A6D132ACCED0EE3ECDD1 /* ZERO_CHECK */;
+			targetProxy = 1263AC527AEF44D19422A31E /* PBXContainerItemProxy */;
+		};
+		FAE7150FDB2F4CE7BB37212E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EA252F8E9B2F0E3795773BD0 /* exporter-tcc */;
-			targetProxy = 2615191598BC47CEA66B07E7 /* PBXContainerItemProxy */;
-		};
-		D17105276654400DA2B266F4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AD06A6D132ACCED0EE3ECDD1 /* ZERO_CHECK */;
-			targetProxy = 24E5F03DCE4D4CDCB83412D0 /* PBXContainerItemProxy */;
+			targetProxy = B0CC0BB7C8CD408EA61C5147 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1192BBD888564F8FBAD936AD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = arm64;
-				SDKROOT = "";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SYMROOT = "/Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/build";
-			};
-			name = Release;
-		};
-		30DC7BA281594F319FAA1552 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = arm64;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = ("","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		3B7DD5325B494D0297BB0E98 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = arm64;
-				SDKROOT = "";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SYMROOT = "/Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/build";
-			};
-			name = MinSizeRel;
-		};
-		3C02931D9AB24A028B3E95E9 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = arm64;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = ("","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		4E865C4FD2854348B2F6EB17 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = arm64;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = ("","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		797FACC99D7941F0A315A534 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = arm64;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = ("","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		7C367D68138C4B22BFF529AC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = arm64;
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = "/Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/Debug";
-				EXECUTABLE_PREFIX = "";
-				EXECUTABLE_SUFFIX = "";
-				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks,"$(inherited)");
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("\"/Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core\"","\"/Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/tools\"","\"/Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS\"","$(inherited)");
-				INSTALL_PATH = "";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_CFLAGS = ("   '-std=gnu11' ","$(inherited)");
-				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework CoreFoundation","-framework CoreGraphics","-framework CoreText","-framework AppKit","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = "exporter-tcc";
-				SECTORDER_FLAGS = "";
-				TARGET_TEMP_DIR = "/Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/build/exporter-tcc.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		87757B5BC5CB411F95BF43BB /* RelWithDebInfo */ = {
+		07FD763AFC3840278C6E4933 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -563,16 +426,7 @@ fi
 			};
 			name = RelWithDebInfo;
 		};
-		BBB5BE6C0C6E4000A3A74C10 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = arm64;
-				SDKROOT = "";
-				SYMROOT = "/Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/build";
-			};
-			name = Debug;
-		};
-		C2A3B235741D42F790226F2C /* Release */ = {
+		083F8915A73F4EDBB726908A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -587,14 +441,23 @@ fi
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = ("","$(inherited)");
 				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
+				PRODUCT_NAME = ZERO_CHECK;
 				SECTORDER_FLAGS = "";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
 			name = Release;
 		};
-		C49B0FBB6BA440BEA7970810 /* Debug */ = {
+		1D57AFF1C22C44E7B53A78A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = "";
+				SYMROOT = "/Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/build";
+			};
+			name = Debug;
+		};
+		64FB8EF445A84A929231CDF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -616,7 +479,7 @@ fi
 			};
 			name = Debug;
 		};
-		DD81BBF7798B481DAF68C460 /* MinSizeRel */ = {
+		71CF085FB3E04ABE9D90A9CA /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -645,7 +508,83 @@ fi
 			};
 			name = MinSizeRel;
 		};
-		E07BBF2BF6FD42DAA395E791 /* RelWithDebInfo */ = {
+		7674124B34CD41E286143EF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = "/Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/build";
+			};
+			name = Release;
+		};
+		925002392A0A457CBB9FBA55 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		933B1466D35D4E809124D171 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		9A6BBE3B3DB44BEE8D7B9675 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		9DA8000F500D4625A9D4810A /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = arm64;
@@ -655,7 +594,7 @@ fi
 			};
 			name = RelWithDebInfo;
 		};
-		EAED8641E8EC4FA184FE780F /* Release */ = {
+		AF0DC3605C3B49578B11C7C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -684,29 +623,7 @@ fi
 			};
 			name = Release;
 		};
-		EC74C1E46D84422F9F98259D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = arm64;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = ("","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		FB3BB4E188C242919E63936A /* RelWithDebInfo */ = {
+		BB764C9E098B4E1691DB3292 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -728,49 +645,132 @@ fi
 			};
 			name = RelWithDebInfo;
 		};
+		C5BF858499284CC09717260A /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = "/Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/build";
+			};
+			name = MinSizeRel;
+		};
+		CEEA5B88E4764175A29F44A6 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		E2C430B4C5C745CEB52AF0DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/Debug";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("\"/Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/core\"","\"/Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/tools\"","\"/Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS\"","$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("   '-std=gnu11' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework CoreFoundation","-framework CoreGraphics","-framework CoreText","-framework AppKit","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "exporter-tcc";
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/build/exporter-tcc.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		E802FF4E14234818B6DED6F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3F492C80EB5746DFA4C35452 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+		10534103ACF348EA90CD8093 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C49B0FBB6BA440BEA7970810 /* Debug */,
-				4E865C4FD2854348B2F6EB17 /* Release */,
-				30DC7BA281594F319FAA1552 /* MinSizeRel */,
-				FB3BB4E188C242919E63936A /* RelWithDebInfo */,
+				64FB8EF445A84A929231CDF4 /* Debug */,
+				083F8915A73F4EDBB726908A /* Release */,
+				CEEA5B88E4764175A29F44A6 /* MinSizeRel */,
+				BB764C9E098B4E1691DB3292 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		6AA5BAD8A5A4494ABCF0FE6E /* Build configuration list for PBXNativeTarget "exporter-tcc" */ = {
+		25D341B4C45344259E87856C /* Build configuration list for PBXNativeTarget "exporter-tcc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7C367D68138C4B22BFF529AC /* Debug */,
-				EAED8641E8EC4FA184FE780F /* Release */,
-				DD81BBF7798B481DAF68C460 /* MinSizeRel */,
-				87757B5BC5CB411F95BF43BB /* RelWithDebInfo */,
+				E2C430B4C5C745CEB52AF0DB /* Debug */,
+				AF0DC3605C3B49578B11C7C3 /* Release */,
+				71CF085FB3E04ABE9D90A9CA /* MinSizeRel */,
+				07FD763AFC3840278C6E4933 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		9263144C68444FBB9CB9E649 /* Build configuration list for PBXProject "exporter-tcc" */ = {
+		869C5DDE46FF4813B0C21F9A /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BBB5BE6C0C6E4000A3A74C10 /* Debug */,
-				1192BBD888564F8FBAD936AD /* Release */,
-				3B7DD5325B494D0297BB0E98 /* MinSizeRel */,
-				E07BBF2BF6FD42DAA395E791 /* RelWithDebInfo */,
+				E802FF4E14234818B6DED6F2 /* Debug */,
+				9A6BBE3B3DB44BEE8D7B9675 /* Release */,
+				925002392A0A457CBB9FBA55 /* MinSizeRel */,
+				933B1466D35D4E809124D171 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		AD8A9BE07FC443A9ACE1B448 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+		C420412FD9D8404983374182 /* Build configuration list for PBXProject "exporter-tcc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EC74C1E46D84422F9F98259D /* Debug */,
-				C2A3B235741D42F790226F2C /* Release */,
-				3C02931D9AB24A028B3E95E9 /* MinSizeRel */,
-				797FACC99D7941F0A315A534 /* RelWithDebInfo */,
+				1D57AFF1C22C44E7B53A78A4 /* Debug */,
+				7674124B34CD41E286143EF1 /* Release */,
+				C5BF858499284CC09717260A /* MinSizeRel */,
+				9DA8000F500D4625A9D4810A /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

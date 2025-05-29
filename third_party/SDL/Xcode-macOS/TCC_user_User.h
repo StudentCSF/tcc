@@ -5,34 +5,34 @@
 #include <stdlib.h>
 
 typedef enum {
-    TCC_kMales,
-    TCC_kFemales,
-    TCC_kOther
+    males,
+    females,
+    other
 } TCC_user_Gender;
 
 typedef struct {
     int TCC_kDay;
-    int TCC_kMonth;
-    int TCC_kYear;
+    int month;
+    int year;
 } TCC_user_Date;
 
 typedef struct {
-    char* TCC_kStreet;
-    char* TCC_kCity;
-    char* TCC_kPostal_code;
+    char* street;
+    char* city;
+    char* postal_code;
 } TCC_user_Address;
 
 typedef struct {
     int id;
-    char* TCC_kUsername;
-    char* TCC_kEmail;
-    int TCC_kAge;
-    TCC_user_Date TCC_kRegistration_date;
-    bool TCC_kIs_active;
-    float TCC_kRating;
-    double TCC_kSalary;
-    TCC_user_Gender TCC_kGender;
-    TCC_user_Address TCC_kAddress;
+    char* username;
+    char* email;
+    int age;
+    TCC_user_Date registration_date;
+    bool is_active;
+    float rating;
+    double salary;
+    TCC_user_Gender gender;
+    TCC_user_Address address;
 } TCC_user_User;
 
 TCC_user_User TCC_user_CreateUser(void);
