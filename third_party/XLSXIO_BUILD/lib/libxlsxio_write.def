@@ -1,0 +1,13 @@
+EXPORTS
+    xlsxiowrite_add_cell_datetime @1
+    xlsxiowrite_add_cell_float @2
+    xlsxiowrite_add_cell_int @3
+    xlsxiowrite_add_cell_string @4
+    xlsxiowrite_add_column @5
+    xlsxiowrite_close @6
+    xlsxiowrite_get_version @7
+    xlsxiowrite_get_version_string @8
+    xlsxiowrite_next_row @9
+    xlsxiowrite_open @10
+    xlsxiowrite_set_detection_rows @11
+    xlsxiowrite_set_row_height @12

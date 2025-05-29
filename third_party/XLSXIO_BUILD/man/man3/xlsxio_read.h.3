@@ -1,0 +1,778 @@
+.TH "include/xlsxio_read.h" 3 "XLSX I/O" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/xlsxio_read.h \- XLSX I/O header file for reading \&.xlsx files\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <stdlib\&.h>\fP
+.br
+\fR#include <stdint\&.h>\fP
+.br
+\fR#include <time\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBXLSXIOCHAR\fP   char"
+.br
+.RI "character type used (usually char, but when XML_UNICODE is defined wchar_t) "
+.in -1c
+.PP
+.RI "\fBXLSXIOREAD_SKIP_*\fP"
+.br
+possible values for the flags parameter of \fBxlsxioread_process()\fP
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_process()\fP 
+.RE
+.PP
+
+.PP
+.in +1c
+.in +1c
+.ti -1c
+.RI "#define \fBXLSXIOREAD_SKIP_NONE\fP"
+.br
+.RI "don't skip any rows or cells "
+.ti -1c
+.RI "#define \fBXLSXIOREAD_SKIP_EMPTY_ROWS\fP"
+.br
+.RI "skip empty rows (note: cells may appear empty while they actually contain data) "
+.ti -1c
+.RI "#define \fBXLSXIOREAD_SKIP_EMPTY_CELLS\fP"
+.br
+.RI "skip empty cells "
+.ti -1c
+.RI "#define \fBXLSXIOREAD_SKIP_ALL_EMPTY\fP"
+.br
+.RI "skip empty rows and cells "
+.ti -1c
+.RI "#define \fBXLSXIOREAD_SKIP_EXTRA_CELLS\fP"
+.br
+.RI "skip extra cells to the right of the rightmost header cell "
+.ti -1c
+.RI "#define \fBXLSXIOREAD_SKIP_HIDDEN_ROWS\fP"
+.br
+.RI "skip hidden rows "
+.in -1c
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct xlsxio_read_struct * \fBxlsxioreader\fP"
+.br
+.RI "read handle for \&.xlsx object "
+.ti -1c
+.RI "typedef int(* \fBxlsxioread_list_sheets_callback_fn\fP) (const \fBXLSXIOCHAR\fP *name, void *callbackdata)"
+.br
+.RI "type of pointer to callback function for listing worksheets "
+.ti -1c
+.RI "typedef int(* \fBxlsxioread_process_cell_callback_fn\fP) (size_t row, size_t col, const \fBXLSXIOCHAR\fP *value, void *callbackdata)"
+.br
+.RI "type of pointer to callback function for processing a worksheet cell value "
+.ti -1c
+.RI "typedef int(* \fBxlsxioread_process_row_callback_fn\fP) (size_t row, size_t maxcol, void *callbackdata)"
+.br
+.RI "type of pointer to callback function for processing the end of a worksheet row "
+.ti -1c
+.RI "typedef struct xlsxio_read_sheetlist_struct * \fBxlsxioreadersheetlist\fP"
+.br
+.RI "read handle for list of worksheet names "
+.ti -1c
+.RI "typedef struct xlsxio_read_sheet_struct * \fBxlsxioreadersheet\fP"
+.br
+.RI "read handle for worksheet object "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO void \fBxlsxioread_get_version\fP (int *pmajor, int *pminor, int *pmicro)"
+.br
+.RI "get xlsxio_write version "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO const \fBXLSXIOCHAR\fP * \fBxlsxioread_get_version_string\fP ()"
+.br
+.RI "get xlsxio_write version string "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO \fBxlsxioreader\fP \fBxlsxioread_open\fP (const char *filename)"
+.br
+.RI "open \&.xlsx file "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO \fBxlsxioreader\fP \fBxlsxioread_open_filehandle\fP (int filehandle)"
+.br
+.RI "open \&.xlsx file "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO \fBxlsxioreader\fP \fBxlsxioread_open_memory\fP (void *data, uint64_t datalen, int freedata)"
+.br
+.RI "open \&.xlsx from memory buffer "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO void \fBxlsxioread_close\fP (\fBxlsxioreader\fP handle)"
+.br
+.RI "close \&.xlsx file "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO void \fBxlsxioread_list_sheets\fP (\fBxlsxioreader\fP handle, \fBxlsxioread_list_sheets_callback_fn\fP callback, void *callbackdata)"
+.br
+.RI "list worksheets in \&.xlsx file "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO int \fBxlsxioread_process\fP (\fBxlsxioreader\fP handle, const \fBXLSXIOCHAR\fP *sheetname, unsigned int flags, \fBxlsxioread_process_cell_callback_fn\fP cell_callback, \fBxlsxioread_process_row_callback_fn\fP row_callback, void *callbackdata)"
+.br
+.RI "process all rows and columns of a worksheet in an \&.xlsx file "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO \fBxlsxioreadersheetlist\fP \fBxlsxioread_sheetlist_open\fP (\fBxlsxioreader\fP handle)"
+.br
+.RI "open list of worksheet names "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO void \fBxlsxioread_sheetlist_close\fP (\fBxlsxioreadersheetlist\fP sheetlisthandle)"
+.br
+.RI "close worksheet "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO const \fBXLSXIOCHAR\fP * \fBxlsxioread_sheetlist_next\fP (\fBxlsxioreadersheetlist\fP sheetlisthandle)"
+.br
+.RI "get next worksheet name "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO size_t \fBxlsxioread_sheet_last_row_index\fP (\fBxlsxioreadersheet\fP sheethandle)"
+.br
+.RI "get index of last row read from worksheet (returns 0 if no row was read yet) "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO size_t \fBxlsxioread_sheet_last_column_index\fP (\fBxlsxioreadersheet\fP sheethandle)"
+.br
+.RI "get index of last column read from current row in worksheet (returns 0 if no column was read yet) "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO unsigned int \fBxlsxioread_sheet_flags\fP (\fBxlsxioreadersheet\fP sheethandle)"
+.br
+.RI "get flags used to open worksheet "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO \fBxlsxioreadersheet\fP \fBxlsxioread_sheet_open\fP (\fBxlsxioreader\fP handle, const \fBXLSXIOCHAR\fP *sheetname, unsigned int flags)"
+.br
+.RI "open worksheet "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO void \fBxlsxioread_sheet_close\fP (\fBxlsxioreadersheet\fP sheethandle)"
+.br
+.RI "close worksheet "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO int \fBxlsxioread_sheet_next_row\fP (\fBxlsxioreadersheet\fP sheethandle)"
+.br
+.RI "get next row from worksheet (to be called before each row) "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO \fBXLSXIOCHAR\fP * \fBxlsxioread_sheet_next_cell\fP (\fBxlsxioreadersheet\fP sheethandle)"
+.br
+.RI "get next cell from worksheet "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO int \fBxlsxioread_sheet_next_cell_string\fP (\fBxlsxioreadersheet\fP sheethandle, \fBXLSXIOCHAR\fP **pvalue)"
+.br
+.RI "get next cell from worksheet as a string "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO int \fBxlsxioread_sheet_next_cell_int\fP (\fBxlsxioreadersheet\fP sheethandle, int64_t *pvalue)"
+.br
+.RI "get next cell from worksheet as an integer "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO int \fBxlsxioread_sheet_next_cell_float\fP (\fBxlsxioreadersheet\fP sheethandle, double *pvalue)"
+.br
+.RI "get next cell from worksheet as a floating point value "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO int \fBxlsxioread_sheet_next_cell_datetime\fP (\fBxlsxioreadersheet\fP sheethandle, time_t *pvalue)"
+.br
+.RI "get next cell from worksheet as date and time data "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO void \fBxlsxioread_free\fP (\fBXLSXIOCHAR\fP *data)"
+.br
+.RI "free memory allocated by the library "
+.in -1c
+.SH "Detailed Description"
+.PP 
+XLSX I/O header file for reading \&.xlsx files\&. 
+
+
+.PP
+\fBAuthor\fP
+.RS 4
+Brecht Sanders 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2016 
+.RE
+.PP
+\fBCopyright\fP
+.RS 4
+MIT
+.RE
+.PP
+Include this header file to use XLSX I/O for reading \&.xlsx files and link with -lxlsxio_read\&. This header provides both advanced methods using callback functions and simple methods for iterating through data\&. 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef int(* xlsxioread_list_sheets_callback_fn) (const \fBXLSXIOCHAR\fP *name, void *callbackdata)"
+
+.PP
+type of pointer to callback function for listing worksheets 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP name of worksheet 
+.br
+\fIcallbackdata\fP callback data passed to xlsxioread_list_sheets 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+zero to continue, non-zero to abort 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_list_sheets()\fP 
+.RE
+.PP
+
+.SS "typedef int(* xlsxioread_process_cell_callback_fn) (size_t row, size_t col, const \fBXLSXIOCHAR\fP *value, void *callbackdata)"
+
+.PP
+type of pointer to callback function for processing a worksheet cell value 
+.PP
+\fBParameters\fP
+.RS 4
+\fIrow\fP row number (first row is 1) 
+.br
+\fIcol\fP column number (first column is 1) 
+.br
+\fIvalue\fP value of cell (note: formulas are not calculated) 
+.br
+\fIcallbackdata\fP callback data passed to xlsxioread_process 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+zero to continue, non-zero to abort 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_process()\fP 
+.PP
+\fBxlsxioread_process_row_callback_fn\fP 
+.RE
+.PP
+
+.SS "typedef int(* xlsxioread_process_row_callback_fn) (size_t row, size_t maxcol, void *callbackdata)"
+
+.PP
+type of pointer to callback function for processing the end of a worksheet row 
+.PP
+\fBParameters\fP
+.RS 4
+\fIrow\fP row number (first row is 1) 
+.br
+\fImaxcol\fP maximum column number on this row (first column is 1) 
+.br
+\fIcallbackdata\fP callback data passed to xlsxioread_process 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+zero to continue, non-zero to abort 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_process()\fP 
+.PP
+\fBxlsxioread_process_cell_callback_fn\fP 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "DLL_EXPORT_XLSXIO void xlsxioread_get_version (int * pmajor, int * pminor, int * pmicro)"
+
+.PP
+get xlsxio_write version 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpmajor\fP pointer to integer that will receive major version number 
+.br
+\fIpminor\fP pointer to integer that will receive minor version number 
+.br
+\fIpmicro\fP pointer to integer that will receive micro version number 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxiowrite_get_version_string()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO const \fBXLSXIOCHAR\fP * xlsxioread_get_version_string ()"
+
+.PP
+get xlsxio_write version string 
+.PP
+\fBReturns\fP
+.RS 4
+version string 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxiowrite_get_version()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO \fBxlsxioreader\fP xlsxioread_open (const char * filename)"
+
+.PP
+open \&.xlsx file 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilename\fP path of \&.xlsx file to open 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+read handle for \&.xlsx object or NULL on error 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_close()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO \fBxlsxioreader\fP xlsxioread_open_filehandle (int filehandle)"
+
+.PP
+open \&.xlsx file 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilehandle\fP file handle of \&.xlsx file opened with read access in binary mode 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+read handle for \&.xlsx object or NULL on error 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_close()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO \fBxlsxioreader\fP xlsxioread_open_memory (void * data, uint64_t datalen, int freedata)"
+
+.PP
+open \&.xlsx from memory buffer 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdata\fP memory buffer containing \&.xlsx file (data must remain valid as long as any xlsxioread_ functions are called) 
+.br
+\fIdatalen\fP size of memory buffer containing \&.xlsx file 
+.br
+\fIfreedata\fP if non-zero data will be freed by \fBxlsxioread_close()\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+read handle for \&.xlsx object or NULL on error 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_close()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO void xlsxioread_close (\fBxlsxioreader\fP handle)"
+
+.PP
+close \&.xlsx file 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhandle\fP read handle for \&.xlsx object 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_open()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO void xlsxioread_list_sheets (\fBxlsxioreader\fP handle, \fBxlsxioread_list_sheets_callback_fn\fP callback, void * callbackdata)"
+
+.PP
+list worksheets in \&.xlsx file 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhandle\fP read handle for \&.xlsx object 
+.br
+\fIcallback\fP callback function called for each worksheet 
+.br
+\fIcallbackdata\fP custom data as passed to quickmail_add_body_custom/quickmail_add_attachment_custom 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_list_sheets_callback_fn\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO int xlsxioread_process (\fBxlsxioreader\fP handle, const \fBXLSXIOCHAR\fP * sheetname, unsigned int flags, \fBxlsxioread_process_cell_callback_fn\fP cell_callback, \fBxlsxioread_process_row_callback_fn\fP row_callback, void * callbackdata)"
+
+.PP
+process all rows and columns of a worksheet in an \&.xlsx file 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhandle\fP read handle for \&.xlsx object 
+.br
+\fIsheetname\fP worksheet name (NULL for first sheet) 
+.br
+\fIflags\fP XLSXIOREAD_SKIP_ flag(s) to determine how data is processed 
+.br
+\fIcell_callback\fP callback function called for each cell 
+.br
+\fIrow_callback\fP callback function called after each row 
+.br
+\fIcallbackdata\fP callback data passed to xlsxioread_process 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+zero on success, non-zero on error 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_process_row_callback_fn\fP 
+.PP
+\fBxlsxioread_process_cell_callback_fn\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO \fBxlsxioreadersheetlist\fP xlsxioread_sheetlist_open (\fBxlsxioreader\fP handle)"
+
+.PP
+open list of worksheet names 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhandle\fP read handle for \&.xlsx object 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_sheetlist_close()\fP 
+.PP
+\fBxlsxioread_open()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO void xlsxioread_sheetlist_close (\fBxlsxioreadersheetlist\fP sheetlisthandle)"
+
+.PP
+close worksheet 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsheetlisthandle\fP read handle for worksheet object 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_sheetlist_open()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO const \fBXLSXIOCHAR\fP * xlsxioread_sheetlist_next (\fBxlsxioreadersheetlist\fP sheetlisthandle)"
+
+.PP
+get next worksheet name 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsheetlisthandle\fP read handle for worksheet object 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+name of worksheet or NULL if no more worksheets are available 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_sheetlist_open()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO size_t xlsxioread_sheet_last_row_index (\fBxlsxioreadersheet\fP sheethandle)"
+
+.PP
+get index of last row read from worksheet (returns 0 if no row was read yet) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsheethandle\fP read handle for worksheet object 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_sheet_open()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO size_t xlsxioread_sheet_last_column_index (\fBxlsxioreadersheet\fP sheethandle)"
+
+.PP
+get index of last column read from current row in worksheet (returns 0 if no column was read yet) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsheethandle\fP read handle for worksheet object 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_sheet_open()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO unsigned int xlsxioread_sheet_flags (\fBxlsxioreadersheet\fP sheethandle)"
+
+.PP
+get flags used to open worksheet 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsheethandle\fP read handle for worksheet object 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_sheet_open()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO \fBxlsxioreadersheet\fP xlsxioread_sheet_open (\fBxlsxioreader\fP handle, const \fBXLSXIOCHAR\fP * sheetname, unsigned int flags)"
+
+.PP
+open worksheet 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhandle\fP read handle for \&.xlsx object 
+.br
+\fIsheetname\fP worksheet name (NULL for first sheet) 
+.br
+\fIflags\fP XLSXIOREAD_SKIP_ flag(s) to determine how data is processed 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+read handle for worksheet object or NULL in case of error 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_sheet_close()\fP 
+.PP
+\fBxlsxioread_open()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO void xlsxioread_sheet_close (\fBxlsxioreadersheet\fP sheethandle)"
+
+.PP
+close worksheet 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsheethandle\fP read handle for worksheet object 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_sheet_open()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO int xlsxioread_sheet_next_row (\fBxlsxioreadersheet\fP sheethandle)"
+
+.PP
+get next row from worksheet (to be called before each row) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsheethandle\fP read handle for worksheet object 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+non-zero if a new row is available 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_sheet_open()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO \fBXLSXIOCHAR\fP * xlsxioread_sheet_next_cell (\fBxlsxioreadersheet\fP sheethandle)"
+
+.PP
+get next cell from worksheet 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsheethandle\fP read handle for worksheet object 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+value (caller must free the result using \fBxlsxioread_free()\fP) or NULL if no more cells are available in the current row 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_sheet_open()\fP 
+.PP
+\fBxlsxioread_free()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO int xlsxioread_sheet_next_cell_string (\fBxlsxioreadersheet\fP sheethandle, \fBXLSXIOCHAR\fP ** pvalue)"
+
+.PP
+get next cell from worksheet as a string 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsheethandle\fP read handle for worksheet object 
+.br
+\fIpvalue\fP pointer where string will be stored if data is available (caller must free the result using \fBxlsxioread_free()\fP) 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+non-zero if a new cell was available in the current row 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_sheet_open()\fP 
+.PP
+\fBxlsxioread_sheet_next_cell()\fP 
+.PP
+\fBxlsxioread_free()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO int xlsxioread_sheet_next_cell_int (\fBxlsxioreadersheet\fP sheethandle, int64_t * pvalue)"
+
+.PP
+get next cell from worksheet as an integer 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsheethandle\fP read handle for worksheet object 
+.br
+\fIpvalue\fP pointer where integer will be stored if data is available 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+non-zero if a new cell was available in the current row 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_sheet_open()\fP 
+.PP
+\fBxlsxioread_sheet_next_cell()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO int xlsxioread_sheet_next_cell_float (\fBxlsxioreadersheet\fP sheethandle, double * pvalue)"
+
+.PP
+get next cell from worksheet as a floating point value 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsheethandle\fP read handle for worksheet object 
+.br
+\fIpvalue\fP pointer where floating point value will be stored if data is available 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+non-zero if a new cell was available in the current row 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_sheet_open()\fP 
+.PP
+\fBxlsxioread_sheet_next_cell()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO int xlsxioread_sheet_next_cell_datetime (\fBxlsxioreadersheet\fP sheethandle, time_t * pvalue)"
+
+.PP
+get next cell from worksheet as date and time data 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsheethandle\fP read handle for worksheet object 
+.br
+\fIpvalue\fP pointer where date and time data will be stored if data is available 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+non-zero if a new cell was available in the current row 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_sheet_open()\fP 
+.PP
+\fBxlsxioread_sheet_next_cell()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO void xlsxioread_free (\fBXLSXIOCHAR\fP * data)"
+
+.PP
+free memory allocated by the library 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdata\fP memory to be freed 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_sheet_next_cell()\fP 
+.PP
+\fBxlsxioread_sheet_next_cell_string()\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XLSX I/O from the source code\&.

@@ -1,0 +1,99 @@
+.TH "include/xlsxio_version.h" 3 "XLSX I/O" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/xlsxio_version.h \- XLSX I/O header file with version information\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBXLSXIO_VERSION_STRING\fP"
+.br
+.RI "string with dotted version number "
+.ti -1c
+.RI "#define \fBXLSXIO_VERSION_ID\fP"
+.br
+.RI "integer version of the library "
+.ti -1c
+.RI "#define \fBXLSXIOREAD_NAME\fP   'libxlsxio_read'"
+.br
+.RI "string with name of XLSX I/O reading library "
+.ti -1c
+.RI "#define \fBXLSXIOWRITE_NAME\fP   'libxlsxio_write'"
+.br
+.RI "string with name of XLSX I/O writing library "
+.ti -1c
+.RI "#define \fBXLSXIOREAD_FULLNAME\fP"
+.br
+.RI "string with name and version of XLSX I/O reading library "
+.ti -1c
+.RI "#define \fBXLSXIOWRITE_FULLNAME\fP"
+.br
+.RI "string with name and version of XLSX I/O writing library "
+.in -1c
+.PP
+.RI "\fBXLSXIO_VERSION_*\fP"
+.br
+version number constants
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxioread_get_version()\fP 
+.PP
+\fBxlsxiowrite_get_version()\fP 
+.RE
+.PP
+
+.PP
+.in +1c
+.in +1c
+.ti -1c
+.RI "#define \fBXLSXIO_VERSION_MAJOR\fP   0"
+.br
+.RI "major version number "
+.ti -1c
+.RI "#define \fBXLSXIO_VERSION_MINOR\fP   2"
+.br
+.RI "minor version number "
+.ti -1c
+.RI "#define \fBXLSXIO_VERSION_MICRO\fP   35"
+.br
+.RI "micro version number "
+.in -1c
+.in -1c
+.SH "Detailed Description"
+.PP 
+XLSX I/O header file with version information\&. 
+
+
+.PP
+\fBAuthor\fP
+.RS 4
+Brecht Sanders
+.RE
+.PP
+Only use this header file when version information is needed at compile time\&. Otherwise the version functions in the libraries should be used\&. 
+.PP
+\fBSee also\fP
+.RS 4
+XLSXIO_VERSION_* 
+.PP
+\fBXLSXIO_VERSION_STRING\fP 
+.PP
+\fBxlsxioread_get_version()\fP 
+.PP
+\fBxlsxioread_get_version_string()\fP 
+.PP
+\fBxlsxiowrite_get_version()\fP 
+.PP
+\fBxlsxiowrite_get_version_string()\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XLSX I/O from the source code\&.

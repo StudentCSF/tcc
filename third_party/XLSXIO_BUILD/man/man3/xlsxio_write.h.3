@@ -1,0 +1,331 @@
+.TH "include/xlsxio_write.h" 3 "XLSX I/O" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/xlsxio_write.h \- XLSX I/O header file for writing \&.xlsx files\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <stdlib\&.h>\fP
+.br
+\fR#include <stdint\&.h>\fP
+.br
+\fR#include <time\&.h>\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct xlsxio_write_struct * \fBxlsxiowriter\fP"
+.br
+.RI "write handle for \&.xlsx object "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO void \fBxlsxiowrite_get_version\fP (int *pmajor, int *pminor, int *pmicro)"
+.br
+.RI "get xlsxio_write version "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO const char * \fBxlsxiowrite_get_version_string\fP ()"
+.br
+.RI "get xlsxio_write version string "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO \fBxlsxiowriter\fP \fBxlsxiowrite_open\fP (const char *filename, const char *sheetname)"
+.br
+.RI "create and open \&.xlsx file "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO int \fBxlsxiowrite_close\fP (\fBxlsxiowriter\fP handle)"
+.br
+.RI "close \&.xlsx file "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO void \fBxlsxiowrite_set_detection_rows\fP (\fBxlsxiowriter\fP handle, size_t rows)"
+.br
+.RI "specify how many initial rows will be buffered in memory to determine column widths "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO void \fBxlsxiowrite_set_row_height\fP (\fBxlsxiowriter\fP handle, size_t height)"
+.br
+.RI "specify the row height to use for the current and next rows "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO void \fBxlsxiowrite_add_column\fP (\fBxlsxiowriter\fP handle, const char *name, int width)"
+.br
+.RI "add a column cell "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO void \fBxlsxiowrite_add_cell_string\fP (\fBxlsxiowriter\fP handle, const char *value)"
+.br
+.RI "add a cell with string data "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO void \fBxlsxiowrite_add_cell_int\fP (\fBxlsxiowriter\fP handle, int64_t value)"
+.br
+.RI "add a cell with integer data "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO void \fBxlsxiowrite_add_cell_float\fP (\fBxlsxiowriter\fP handle, double value)"
+.br
+.RI "add a cell with floating point data "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO void \fBxlsxiowrite_add_cell_datetime\fP (\fBxlsxiowriter\fP handle, time_t value)"
+.br
+.RI "add a cell with date and time data "
+.ti -1c
+.RI "DLL_EXPORT_XLSXIO void \fBxlsxiowrite_next_row\fP (\fBxlsxiowriter\fP handle)"
+.br
+.RI "mark the end of a row (next cell will start on a new row) "
+.in -1c
+.SH "Detailed Description"
+.PP 
+XLSX I/O header file for writing \&.xlsx files\&. 
+
+
+.PP
+\fBAuthor\fP
+.RS 4
+Brecht Sanders 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2016 
+.RE
+.PP
+\fBCopyright\fP
+.RS 4
+MIT
+.RE
+.PP
+Include this header file to use XLSX I/O for writing \&.xlsx files and link with -lxlsxio_write\&. 
+.SH "Function Documentation"
+.PP 
+.SS "DLL_EXPORT_XLSXIO void xlsxiowrite_get_version (int * pmajor, int * pminor, int * pmicro)"
+
+.PP
+get xlsxio_write version 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpmajor\fP pointer to integer that will receive major version number 
+.br
+\fIpminor\fP pointer to integer that will receive minor version number 
+.br
+\fIpmicro\fP pointer to integer that will receive micro version number 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxiowrite_get_version_string()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO const char * xlsxiowrite_get_version_string ()"
+
+.PP
+get xlsxio_write version string 
+.PP
+\fBReturns\fP
+.RS 4
+version string 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxiowrite_get_version()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO \fBxlsxiowriter\fP xlsxiowrite_open (const char * filename, const char * sheetname)"
+
+.PP
+create and open \&.xlsx file 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilename\fP path of \&.xlsx file to open 
+.br
+\fIsheetname\fP name of worksheet 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+write handle for \&.xlsx object or NULL on error 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxiowrite_close()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO int xlsxiowrite_close (\fBxlsxiowriter\fP handle)"
+
+.PP
+close \&.xlsx file 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhandle\fP write handle for \&.xlsx object 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+zero on success, non-zero on error 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxiowrite_open()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO void xlsxiowrite_set_detection_rows (\fBxlsxiowriter\fP handle, size_t rows)"
+
+.PP
+specify how many initial rows will be buffered in memory to determine column widths 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhandle\fP write handle for \&.xlsx object 
+.br
+\fIrows\fP number of rows to buffer in memory, zero for none Must be called before the first call to \fBxlsxiowrite_next_row()\fP 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxiowrite_add_column()\fP 
+.PP
+\fBxlsxiowrite_next_row()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO void xlsxiowrite_set_row_height (\fBxlsxiowriter\fP handle, size_t height)"
+
+.PP
+specify the row height to use for the current and next rows 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhandle\fP write handle for \&.xlsx object 
+.br
+\fIheight\fP row height (in text lines), zero for unspecified Must be called before the first call to any xlsxiowrite_add_ function of the current row 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxiowrite_next_row()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO void xlsxiowrite_add_column (\fBxlsxiowriter\fP handle, const char * name, int width)"
+
+.PP
+add a column cell 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhandle\fP write handle for \&.xlsx object 
+.br
+\fIname\fP column name 
+.br
+\fIwidth\fP column width (in characters) Only one row of column names is supported or none\&. Call for each column, and finish column row by calling \fBxlsxiowrite_next_row()\fP\&. Must be called before any \fBxlsxiowrite_next_row()\fP or the xlsxiowrite_add_cell_ functions\&. 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxiowrite_next_row()\fP 
+.PP
+\fBxlsxiowrite_set_detection_rows()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO void xlsxiowrite_add_cell_string (\fBxlsxiowriter\fP handle, const char * value)"
+
+.PP
+add a cell with string data 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhandle\fP write handle for \&.xlsx object 
+.br
+\fIvalue\fP string value 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxiowrite_next_row()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO void xlsxiowrite_add_cell_int (\fBxlsxiowriter\fP handle, int64_t value)"
+
+.PP
+add a cell with integer data 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhandle\fP write handle for \&.xlsx object 
+.br
+\fIvalue\fP integer value 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxiowrite_next_row()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO void xlsxiowrite_add_cell_float (\fBxlsxiowriter\fP handle, double value)"
+
+.PP
+add a cell with floating point data 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhandle\fP write handle for \&.xlsx object 
+.br
+\fIvalue\fP floating point value 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxiowrite_next_row()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO void xlsxiowrite_add_cell_datetime (\fBxlsxiowriter\fP handle, time_t value)"
+
+.PP
+add a cell with date and time data 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhandle\fP write handle for \&.xlsx object 
+.br
+\fIvalue\fP date and time value 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxiowrite_next_row()\fP 
+.RE
+.PP
+
+.SS "DLL_EXPORT_XLSXIO void xlsxiowrite_next_row (\fBxlsxiowriter\fP handle)"
+
+.PP
+mark the end of a row (next cell will start on a new row) 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhandle\fP write handle for \&.xlsx object 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBxlsxiowrite_add_cell_string()\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for XLSX I/O from the source code\&.
