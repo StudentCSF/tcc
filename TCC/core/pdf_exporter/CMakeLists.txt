@@ -17,14 +17,14 @@ include_directories(
 add_executable(exporter-tcc
     main.c
     TCC_user_User.c
-    tools/TCC_PDF_CheckFontsOnPage.c
-    tools/TCC_PDF_CreatePdfFile.c
+    TCC_PDF_CheckFontsOnPage.c
+    TCC_PDF_CreatePdfFile.c
     
-    tools/TCC_PDF_DisplayPdfPage.c
-    tools/TCC_PDF_GetPdfDocumentRef.c
-    tools/TCC_PDF_PrintPdfContent.c
+    TCC_PDF_DisplayPdfPage.c
+    TCC_PDF_GetPdfDocumentRef.c
+    TCC_PDF_PrintPdfContent.c
    
-    tools/TCC_PDF_MakePngImageFromPdf.c
+    TCC_PDF_MakePngImageFromPdf.c
 )
 
 target_link_libraries(exporter-tcc
