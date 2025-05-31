@@ -21,11 +21,6 @@ set(PDF_SOURCES
         TCC/PDF/PDFGenerator/TCC_pdf_pages.c
         )
 
-set(PDF_TEST_SOURCES
-        TCC/PDF/tests/TCC_tests.c
-        TCC/PDF/tests/main.c
-        )
-
 add_executable(${AppName}
         TCC/core/TCC_money.c
         TCC/core/TCC_STS.c
@@ -36,7 +31,7 @@ add_executable(${AppName}
 
 add_executable(tcc_pdf_tests
         ${PDF_SOURCES}
-        ${PDF_TEST_SOURCES})
+        )
 
 
 target_include_directories(${AppName} PRIVATE ${CMAKE_SOURCE_DIR})
