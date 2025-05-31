@@ -1,6 +1,7 @@
 CMakeFiles/my_pdf_tests.dir/tests.c.o: \
   /Users/daniil/tcc/TCC/PDF/tests/tests.c \
-  /Users/daniil/tcc/TCC/PDF/tests/../pdf_generator/pdf_generator.h \
+  /Users/daniil/tcc/TCC/PDF/tests/../PDFGenerator/TCC_pdf_fonts.h \
+  /Users/daniil/tcc/TCC/PDF/tests/../PDFGenerator/TCC_pdf_common.h \
   /usr/local/include/hpdf.h /usr/local/include/hpdf_config.h \
   /usr/local/include/hpdf_version.h /usr/local/include/hpdf_consts.h \
   /usr/local/include/hpdf_doc.h /usr/local/include/hpdf_catalog.h \
@@ -91,6 +92,8 @@ CMakeFiles/my_pdf_tests.dir/tests.c.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/sys/_types/_clock_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/sys/_types/_time_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/sys/_types/_timespec.h \
+  /Users/daniil/tcc/TCC/PDF/tests/../PDFGenerator/TCC_pdf_pages.h \
+  /Users/daniil/tcc/TCC/PDF/tests/../PDFGenerator/TCC_pdf_document.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/_stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/sys/_types/_va_list.h \

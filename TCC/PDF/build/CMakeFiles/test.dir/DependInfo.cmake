@@ -8,8 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c" "CMakeFiles/test.dir/PDFGenerator/TCC_pdf_document.c.o" "gcc" "CMakeFiles/test.dir/PDFGenerator/TCC_pdf_document.c.o.d"
+  "/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c" "CMakeFiles/test.dir/PDFGenerator/TCC_pdf_fonts.c.o" "gcc" "CMakeFiles/test.dir/PDFGenerator/TCC_pdf_fonts.c.o.d"
+  "/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c" "CMakeFiles/test.dir/PDFGenerator/TCC_pdf_pages.c.o" "gcc" "CMakeFiles/test.dir/PDFGenerator/TCC_pdf_pages.c.o.d"
   "/Users/daniil/tcc/TCC/PDF/main.c" "CMakeFiles/test.dir/main.c.o" "gcc" "CMakeFiles/test.dir/main.c.o.d"
-  "/Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c" "CMakeFiles/test.dir/pdf_generator/pdf_generator.c.o" "gcc" "CMakeFiles/test.dir/pdf_generator/pdf_generator.c.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

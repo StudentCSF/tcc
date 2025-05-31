@@ -1,8 +1,12 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/test.dir/PDFGenerator/TCC_pdf_document.c.o"
+  "CMakeFiles/test.dir/PDFGenerator/TCC_pdf_document.c.o.d"
+  "CMakeFiles/test.dir/PDFGenerator/TCC_pdf_fonts.c.o"
+  "CMakeFiles/test.dir/PDFGenerator/TCC_pdf_fonts.c.o.d"
+  "CMakeFiles/test.dir/PDFGenerator/TCC_pdf_pages.c.o"
+  "CMakeFiles/test.dir/PDFGenerator/TCC_pdf_pages.c.o.d"
   "CMakeFiles/test.dir/main.c.o"
   "CMakeFiles/test.dir/main.c.o.d"
-  "CMakeFiles/test.dir/pdf_generator/pdf_generator.c.o"
-  "CMakeFiles/test.dir/pdf_generator/pdf_generator.c.o.d"
   "test"
   "test.pdb"
 )

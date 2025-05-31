@@ -95,7 +95,8 @@ CMakeFiles/test.dir/main.c.o: /Users/daniil/tcc/TCC/PDF/main.c \
   /usr/local/include/hpdf_gstate.h /usr/local/include/hpdf_font.h \
   /usr/local/include/hpdf_fontdef.h /usr/local/include/hpdf_ext_gstate.h \
   /usr/local/include/hpdf_outline.h \
-  /Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.h \
+  /Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.h \
+  /Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_common.h \
   /usr/local/include/xlsxio_read.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/time.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/_time.h \

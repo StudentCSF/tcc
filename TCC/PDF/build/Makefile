@@ -129,6 +129,78 @@ test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
 .PHONY : test/fast
 
+PDFGenerator/TCC_pdf_document.o: PDFGenerator/TCC_pdf_document.c.o
+.PHONY : PDFGenerator/TCC_pdf_document.o
+
+# target to build an object file
+PDFGenerator/TCC_pdf_document.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/PDFGenerator/TCC_pdf_document.c.o
+.PHONY : PDFGenerator/TCC_pdf_document.c.o
+
+PDFGenerator/TCC_pdf_document.i: PDFGenerator/TCC_pdf_document.c.i
+.PHONY : PDFGenerator/TCC_pdf_document.i
+
+# target to preprocess a source file
+PDFGenerator/TCC_pdf_document.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/PDFGenerator/TCC_pdf_document.c.i
+.PHONY : PDFGenerator/TCC_pdf_document.c.i
+
+PDFGenerator/TCC_pdf_document.s: PDFGenerator/TCC_pdf_document.c.s
+.PHONY : PDFGenerator/TCC_pdf_document.s
+
+# target to generate assembly for a file
+PDFGenerator/TCC_pdf_document.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/PDFGenerator/TCC_pdf_document.c.s
+.PHONY : PDFGenerator/TCC_pdf_document.c.s
+
+PDFGenerator/TCC_pdf_fonts.o: PDFGenerator/TCC_pdf_fonts.c.o
+.PHONY : PDFGenerator/TCC_pdf_fonts.o
+
+# target to build an object file
+PDFGenerator/TCC_pdf_fonts.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/PDFGenerator/TCC_pdf_fonts.c.o
+.PHONY : PDFGenerator/TCC_pdf_fonts.c.o
+
+PDFGenerator/TCC_pdf_fonts.i: PDFGenerator/TCC_pdf_fonts.c.i
+.PHONY : PDFGenerator/TCC_pdf_fonts.i
+
+# target to preprocess a source file
+PDFGenerator/TCC_pdf_fonts.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/PDFGenerator/TCC_pdf_fonts.c.i
+.PHONY : PDFGenerator/TCC_pdf_fonts.c.i
+
+PDFGenerator/TCC_pdf_fonts.s: PDFGenerator/TCC_pdf_fonts.c.s
+.PHONY : PDFGenerator/TCC_pdf_fonts.s
+
+# target to generate assembly for a file
+PDFGenerator/TCC_pdf_fonts.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/PDFGenerator/TCC_pdf_fonts.c.s
+.PHONY : PDFGenerator/TCC_pdf_fonts.c.s
+
+PDFGenerator/TCC_pdf_pages.o: PDFGenerator/TCC_pdf_pages.c.o
+.PHONY : PDFGenerator/TCC_pdf_pages.o
+
+# target to build an object file
+PDFGenerator/TCC_pdf_pages.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/PDFGenerator/TCC_pdf_pages.c.o
+.PHONY : PDFGenerator/TCC_pdf_pages.c.o
+
+PDFGenerator/TCC_pdf_pages.i: PDFGenerator/TCC_pdf_pages.c.i
+.PHONY : PDFGenerator/TCC_pdf_pages.i
+
+# target to preprocess a source file
+PDFGenerator/TCC_pdf_pages.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/PDFGenerator/TCC_pdf_pages.c.i
+.PHONY : PDFGenerator/TCC_pdf_pages.c.i
+
+PDFGenerator/TCC_pdf_pages.s: PDFGenerator/TCC_pdf_pages.c.s
+.PHONY : PDFGenerator/TCC_pdf_pages.s
+
+# target to generate assembly for a file
+PDFGenerator/TCC_pdf_pages.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/PDFGenerator/TCC_pdf_pages.c.s
+.PHONY : PDFGenerator/TCC_pdf_pages.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -153,30 +225,6 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/main.c.s
 .PHONY : main.c.s
 
-pdf_generator/pdf_generator.o: pdf_generator/pdf_generator.c.o
-.PHONY : pdf_generator/pdf_generator.o
-
-# target to build an object file
-pdf_generator/pdf_generator.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/pdf_generator/pdf_generator.c.o
-.PHONY : pdf_generator/pdf_generator.c.o
-
-pdf_generator/pdf_generator.i: pdf_generator/pdf_generator.c.i
-.PHONY : pdf_generator/pdf_generator.i
-
-# target to preprocess a source file
-pdf_generator/pdf_generator.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/pdf_generator/pdf_generator.c.i
-.PHONY : pdf_generator/pdf_generator.c.i
-
-pdf_generator/pdf_generator.s: pdf_generator/pdf_generator.c.s
-.PHONY : pdf_generator/pdf_generator.s
-
-# target to generate assembly for a file
-pdf_generator/pdf_generator.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/pdf_generator/pdf_generator.c.s
-.PHONY : pdf_generator/pdf_generator.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +234,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... PDFGenerator/TCC_pdf_document.o"
+	@echo "... PDFGenerator/TCC_pdf_document.i"
+	@echo "... PDFGenerator/TCC_pdf_document.s"
+	@echo "... PDFGenerator/TCC_pdf_fonts.o"
+	@echo "... PDFGenerator/TCC_pdf_fonts.i"
+	@echo "... PDFGenerator/TCC_pdf_fonts.s"
+	@echo "... PDFGenerator/TCC_pdf_pages.o"
+	@echo "... PDFGenerator/TCC_pdf_pages.i"
+	@echo "... PDFGenerator/TCC_pdf_pages.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... pdf_generator/pdf_generator.o"
-	@echo "... pdf_generator/pdf_generator.i"
-	@echo "... pdf_generator/pdf_generator.s"
 .PHONY : help
 
 

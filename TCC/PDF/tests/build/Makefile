@@ -129,29 +129,101 @@ my_pdf_tests/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_pdf_tests.dir/build.make CMakeFiles/my_pdf_tests.dir/build
 .PHONY : my_pdf_tests/fast
 
-Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.o: Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.o
-.PHONY : Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.o
+TCC_tests.o: TCC_tests.c.o
+.PHONY : TCC_tests.o
 
 # target to build an object file
-Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_pdf_tests.dir/build.make CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.o
-.PHONY : Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.o
+TCC_tests.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_pdf_tests.dir/build.make CMakeFiles/my_pdf_tests.dir/TCC_tests.c.o
+.PHONY : TCC_tests.c.o
 
-Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.i: Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.i
-.PHONY : Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.i
+TCC_tests.i: TCC_tests.c.i
+.PHONY : TCC_tests.i
 
 # target to preprocess a source file
-Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_pdf_tests.dir/build.make CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.i
-.PHONY : Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.i
+TCC_tests.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_pdf_tests.dir/build.make CMakeFiles/my_pdf_tests.dir/TCC_tests.c.i
+.PHONY : TCC_tests.c.i
 
-Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.s: Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.s
-.PHONY : Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.s
+TCC_tests.s: TCC_tests.c.s
+.PHONY : TCC_tests.s
 
 # target to generate assembly for a file
-Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_pdf_tests.dir/build.make CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.s
-.PHONY : Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.s
+TCC_tests.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_pdf_tests.dir/build.make CMakeFiles/my_pdf_tests.dir/TCC_tests.c.s
+.PHONY : TCC_tests.c.s
+
+Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.o: Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.o
+.PHONY : Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.o
+
+# target to build an object file
+Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_pdf_tests.dir/build.make CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.o
+.PHONY : Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.o
+
+Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.i: Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.i
+.PHONY : Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.i
+
+# target to preprocess a source file
+Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_pdf_tests.dir/build.make CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.i
+.PHONY : Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.i
+
+Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.s: Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.s
+.PHONY : Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.s
+
+# target to generate assembly for a file
+Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_pdf_tests.dir/build.make CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.s
+.PHONY : Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.s
+
+Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.o: Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.o
+.PHONY : Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.o
+
+# target to build an object file
+Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_pdf_tests.dir/build.make CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.o
+.PHONY : Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.o
+
+Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.i: Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.i
+.PHONY : Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.i
+
+# target to preprocess a source file
+Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_pdf_tests.dir/build.make CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.i
+.PHONY : Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.i
+
+Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.s: Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.s
+.PHONY : Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.s
+
+# target to generate assembly for a file
+Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_pdf_tests.dir/build.make CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.s
+.PHONY : Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.s
+
+Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.o: Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.o
+.PHONY : Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.o
+
+# target to build an object file
+Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_pdf_tests.dir/build.make CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.o
+.PHONY : Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.o
+
+Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.i: Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.i
+.PHONY : Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.i
+
+# target to preprocess a source file
+Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_pdf_tests.dir/build.make CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.i
+.PHONY : Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.i
+
+Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.s: Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.s
+.PHONY : Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.s
+
+# target to generate assembly for a file
+Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_pdf_tests.dir/build.make CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.s
+.PHONY : Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.s
 
 main.o: main.c.o
 .PHONY : main.o
@@ -177,30 +249,6 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_pdf_tests.dir/build.make CMakeFiles/my_pdf_tests.dir/main.c.s
 .PHONY : main.c.s
 
-tests.o: tests.c.o
-.PHONY : tests.o
-
-# target to build an object file
-tests.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_pdf_tests.dir/build.make CMakeFiles/my_pdf_tests.dir/tests.c.o
-.PHONY : tests.c.o
-
-tests.i: tests.c.i
-.PHONY : tests.i
-
-# target to preprocess a source file
-tests.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_pdf_tests.dir/build.make CMakeFiles/my_pdf_tests.dir/tests.c.i
-.PHONY : tests.c.i
-
-tests.s: tests.c.s
-.PHONY : tests.s
-
-# target to generate assembly for a file
-tests.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_pdf_tests.dir/build.make CMakeFiles/my_pdf_tests.dir/tests.c.s
-.PHONY : tests.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -210,15 +258,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... my_pdf_tests"
-	@echo "... Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.o"
-	@echo "... Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.i"
-	@echo "... Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.s"
+	@echo "... TCC_tests.o"
+	@echo "... TCC_tests.i"
+	@echo "... TCC_tests.s"
+	@echo "... Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.o"
+	@echo "... Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.i"
+	@echo "... Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.s"
+	@echo "... Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.o"
+	@echo "... Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.i"
+	@echo "... Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.s"
+	@echo "... Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.o"
+	@echo "... Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.i"
+	@echo "... Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... tests.o"
-	@echo "... tests.i"
-	@echo "... tests.s"
 .PHONY : help
 
 

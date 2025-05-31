@@ -81,12 +81,12 @@ clean: CMakeFiles/my_pdf_tests.dir/clean
 CMakeFiles/my_pdf_tests.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_pdf_tests.dir/build.make CMakeFiles/my_pdf_tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_pdf_tests.dir/build.make CMakeFiles/my_pdf_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/daniil/tcc/TCC/PDF/tests/build/CMakeFiles --progress-num=1,2,3,4 "Built target my_pdf_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/daniil/tcc/TCC/PDF/tests/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target my_pdf_tests"
 .PHONY : CMakeFiles/my_pdf_tests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/my_pdf_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/daniil/tcc/TCC/PDF/tests/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/daniil/tcc/TCC/PDF/tests/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/my_pdf_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/daniil/tcc/TCC/PDF/tests/build/CMakeFiles 0
 .PHONY : CMakeFiles/my_pdf_tests.dir/rule

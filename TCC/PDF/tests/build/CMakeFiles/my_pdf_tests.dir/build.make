@@ -83,49 +83,81 @@ CMakeFiles/my_pdf_tests.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/my_pdf_tests.dir/main.c.s"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/daniil/tcc/TCC/PDF/tests/main.c -o CMakeFiles/my_pdf_tests.dir/main.c.s
 
-CMakeFiles/my_pdf_tests.dir/tests.c.o: CMakeFiles/my_pdf_tests.dir/flags.make
-CMakeFiles/my_pdf_tests.dir/tests.c.o: /Users/daniil/tcc/TCC/PDF/tests/tests.c
-CMakeFiles/my_pdf_tests.dir/tests.c.o: CMakeFiles/my_pdf_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/daniil/tcc/TCC/PDF/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/my_pdf_tests.dir/tests.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/my_pdf_tests.dir/tests.c.o -MF CMakeFiles/my_pdf_tests.dir/tests.c.o.d -o CMakeFiles/my_pdf_tests.dir/tests.c.o -c /Users/daniil/tcc/TCC/PDF/tests/tests.c
+CMakeFiles/my_pdf_tests.dir/TCC_tests.c.o: CMakeFiles/my_pdf_tests.dir/flags.make
+CMakeFiles/my_pdf_tests.dir/TCC_tests.c.o: /Users/daniil/tcc/TCC/PDF/tests/TCC_tests.c
+CMakeFiles/my_pdf_tests.dir/TCC_tests.c.o: CMakeFiles/my_pdf_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/daniil/tcc/TCC/PDF/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/my_pdf_tests.dir/TCC_tests.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/my_pdf_tests.dir/TCC_tests.c.o -MF CMakeFiles/my_pdf_tests.dir/TCC_tests.c.o.d -o CMakeFiles/my_pdf_tests.dir/TCC_tests.c.o -c /Users/daniil/tcc/TCC/PDF/tests/TCC_tests.c
 
-CMakeFiles/my_pdf_tests.dir/tests.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/my_pdf_tests.dir/tests.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/daniil/tcc/TCC/PDF/tests/tests.c > CMakeFiles/my_pdf_tests.dir/tests.c.i
+CMakeFiles/my_pdf_tests.dir/TCC_tests.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/my_pdf_tests.dir/TCC_tests.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/daniil/tcc/TCC/PDF/tests/TCC_tests.c > CMakeFiles/my_pdf_tests.dir/TCC_tests.c.i
 
-CMakeFiles/my_pdf_tests.dir/tests.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/my_pdf_tests.dir/tests.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/daniil/tcc/TCC/PDF/tests/tests.c -o CMakeFiles/my_pdf_tests.dir/tests.c.s
+CMakeFiles/my_pdf_tests.dir/TCC_tests.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/my_pdf_tests.dir/TCC_tests.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/daniil/tcc/TCC/PDF/tests/TCC_tests.c -o CMakeFiles/my_pdf_tests.dir/TCC_tests.c.s
 
-CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.o: CMakeFiles/my_pdf_tests.dir/flags.make
-CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.o: /Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c
-CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.o: CMakeFiles/my_pdf_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/daniil/tcc/TCC/PDF/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.o -MF CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.o.d -o CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.o -c /Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c
+CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.o: CMakeFiles/my_pdf_tests.dir/flags.make
+CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.o: /Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c
+CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.o: CMakeFiles/my_pdf_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/daniil/tcc/TCC/PDF/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.o -MF CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.o.d -o CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.o -c /Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c
 
-CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c > CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.i
+CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c > CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.i
 
-CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c -o CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.s
+CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c -o CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.s
+
+CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.o: CMakeFiles/my_pdf_tests.dir/flags.make
+CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.o: /Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c
+CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.o: CMakeFiles/my_pdf_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/daniil/tcc/TCC/PDF/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.o -MF CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.o.d -o CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.o -c /Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c
+
+CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c > CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.i
+
+CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c -o CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.s
+
+CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.o: CMakeFiles/my_pdf_tests.dir/flags.make
+CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.o: /Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c
+CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.o: CMakeFiles/my_pdf_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/daniil/tcc/TCC/PDF/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.o -MF CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.o.d -o CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.o -c /Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c
+
+CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c > CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.i
+
+CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c -o CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.s
 
 # Object files for target my_pdf_tests
 my_pdf_tests_OBJECTS = \
 "CMakeFiles/my_pdf_tests.dir/main.c.o" \
-"CMakeFiles/my_pdf_tests.dir/tests.c.o" \
-"CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.o"
+"CMakeFiles/my_pdf_tests.dir/TCC_tests.c.o" \
+"CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.o" \
+"CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.o" \
+"CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.o"
 
 # External object files for target my_pdf_tests
 my_pdf_tests_EXTERNAL_OBJECTS =
 
 my_pdf_tests: CMakeFiles/my_pdf_tests.dir/main.c.o
-my_pdf_tests: CMakeFiles/my_pdf_tests.dir/tests.c.o
-my_pdf_tests: CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.o
+my_pdf_tests: CMakeFiles/my_pdf_tests.dir/TCC_tests.c.o
+my_pdf_tests: CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.o
+my_pdf_tests: CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.o
+my_pdf_tests: CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.o
 my_pdf_tests: CMakeFiles/my_pdf_tests.dir/build.make
 my_pdf_tests: CMakeFiles/my_pdf_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/daniil/tcc/TCC/PDF/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable my_pdf_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/daniil/tcc/TCC/PDF/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable my_pdf_tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/my_pdf_tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -4,7 +4,7 @@
 # compile C with /Library/Developer/CommandLineTools/usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/usr/local/include -I/Users/daniil/tcc/TCC/PDF/tests/../pdf_generator
+C_INCLUDES = -I/usr/local/include -I/Users/daniil/tcc/TCC/PDF/tests/../PDFGenerator
 
 C_FLAGSx86_64 =  -arch x86_64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -mmacosx-version-min=15.2
 

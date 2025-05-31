@@ -8,9 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c" "CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.o" "gcc" "CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/pdf_generator/pdf_generator.c.o.d"
+  "/Users/daniil/tcc/TCC/PDF/tests/TCC_tests.c" "CMakeFiles/my_pdf_tests.dir/TCC_tests.c.o" "gcc" "CMakeFiles/my_pdf_tests.dir/TCC_tests.c.o.d"
+  "/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c" "CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.o" "gcc" "CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_document.c.o.d"
+  "/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c" "CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.o" "gcc" "CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_fonts.c.o.d"
+  "/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c" "CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.o" "gcc" "CMakeFiles/my_pdf_tests.dir/Users/daniil/tcc/TCC/PDF/PDFGenerator/TCC_pdf_pages.c.o.d"
   "/Users/daniil/tcc/TCC/PDF/tests/main.c" "CMakeFiles/my_pdf_tests.dir/main.c.o" "gcc" "CMakeFiles/my_pdf_tests.dir/main.c.o.d"
-  "/Users/daniil/tcc/TCC/PDF/tests/tests.c" "CMakeFiles/my_pdf_tests.dir/tests.c.o" "gcc" "CMakeFiles/my_pdf_tests.dir/tests.c.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
