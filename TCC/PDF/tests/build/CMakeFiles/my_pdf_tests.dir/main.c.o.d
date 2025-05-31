@@ -1,5 +1,6 @@
 CMakeFiles/my_pdf_tests.dir/main.c.o: \
   /Users/daniil/tcc/TCC/PDF/tests/main.c \
+  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdbool.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/_stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/_bounds.h \
@@ -39,5 +40,4 @@ CMakeFiles/my_pdf_tests.dir/main.c.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/sys/_types/_ssize_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/secure/_stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/secure/_common.h \
-  /Users/daniil/tcc/TCC/PDF/tests/TCC_tests.h \
-  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdbool.h
+  /Users/daniil/tcc/TCC/PDF/tests/TCC_tests.h
