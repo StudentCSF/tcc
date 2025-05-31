@@ -9,8 +9,7 @@ find_library(COREGRAPHICS CoreGraphics)
 find_library(CORETEXT CoreText)
 find_library(APPKIT AppKit)
 
-include_directories(
-    core       
+include_directories(       
     tools      
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
@@ -18,12 +17,12 @@ include_directories(
 add_executable(exporter-tcc
     main.c
     TCC_user_User.c
-    core/TCC_PDF_CheckFontsOnPage.c
-    core/TCC_PDF_CreatePdfFile.c
+    tools/TCC_PDF_CheckFontsOnPage.c
+    tools/TCC_PDF_CreatePdfFile.c
     
-    core/TCC_PDF_DisplayPdfPage.c
-    core/TCC_PDF_GetPdfDocumentRef.c
-    core/TCC_PDF_PrintPdfContent.c
+    tools/TCC_PDF_DisplayPdfPage.c
+    tools/TCC_PDF_GetPdfDocumentRef.c
+    tools/TCC_PDF_PrintPdfContent.c
    
     tools/TCC_PDF_MakePngImageFromPdf.c
 )
