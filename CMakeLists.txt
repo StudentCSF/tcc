@@ -16,13 +16,23 @@ endif ()
 
 find_package(OpenGL REQUIRED)
 
+set(PDF_SOURCES
+        TCC/PDF/PDFGenerator/TCC_pdf_fonts.c
+        TCC/PDF/PDFGenerator/TCC_pdf_document.c
+        TCC/PDF/PDFGenerator/TCC_pdf_pages.c
+        )
+
 add_executable(${AppName}
         TCC/core/TCC_money.c
         TCC/core/TCC_STS.c
         TCC/infra/TCC_money_load.c
         #TCC/core/TCC_compute_shader.c
-
+        ${PDF_SOURCES}
         main.c)
+
+add_executable(tcc_pdf_tests
+        ${PDF_SOURCES}
+        )
 
 
 target_include_directories(${AppName} PRIVATE ${CMAKE_SOURCE_DIR})

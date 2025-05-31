@@ -1,0 +1,4 @@
+/Users/daniil/tcc/TCC/PDF/tests/build/CMakeFiles/my_pdf_tests.dir
+/Users/daniil/tcc/TCC/PDF/tests/build/CMakeFiles/test.dir
+/Users/daniil/tcc/TCC/PDF/tests/build/CMakeFiles/edit_cache.dir
+/Users/daniil/tcc/TCC/PDF/tests/build/CMakeFiles/rebuild_cache.dir
