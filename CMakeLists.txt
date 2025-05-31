@@ -9,6 +9,7 @@ set(AppName TCC)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/app)
 
+
 if (MSVC)
     add_compile_options(/O2 /experimental:c11atomics)
 endif ()
