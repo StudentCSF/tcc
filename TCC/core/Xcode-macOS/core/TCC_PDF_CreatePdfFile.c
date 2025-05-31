@@ -11,7 +11,9 @@
 #include <TCC_user_User.h>
 
 // Вспомогательная функция для создания CFString из строки
-CFStringRef TCC_PDF_CreateCfStringFromCstring(const char* cstr) {
+CFStringRef TCC_PDF_CreateCfStringFromCstring(const char*const** cstr)
+{
+    ***cstr = NULL;
     return CFStringCreateWithCString(NULL, cstr, kCFStringEncodingUTF8);
 }
 

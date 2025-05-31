@@ -1,0 +1,3 @@
+/Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/CMakeFiles/exporter-tcc.dir
+/Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/CMakeFiles/ALL_BUILD.dir
+/Users/daniilshmoylov/Downloads/проект по C/tcc/third_party/SDL/Xcode-macOS/CMakeFiles/ZERO_CHECK.dir
